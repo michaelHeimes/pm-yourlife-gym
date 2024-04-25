@@ -1,0 +1,213 @@
+{
+    "key": "group_6533bd313a540",
+    "title": "Cloned Fields",
+    "fields": [
+        {
+            "key": "field_6533bd31ddffd",
+            "label": "Page Banner",
+            "name": "page_banner",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_6533bd54ddffe",
+                    "label": "Style",
+                    "name": "style",
+                    "aria-label": "",
+                    "type": "button_group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "slider": "Slider w\/Optional Video",
+                        "narrow-centered": "Narrow and Centered"
+                    },
+                    "default_value": "",
+                    "return_format": "value",
+                    "allow_null": 0,
+                    "layout": "horizontal"
+                },
+                {
+                    "key": "field_6533bd85ddfff",
+                    "label": "Slides",
+                    "name": "slides",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6533bd54ddffe",
+                                "operator": "==",
+                                "value": "slider"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "table",
+                    "pagination": 0,
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "",
+                    "button_label": "Add Slide",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_6533bd8cde000",
+                            "label": "Media Type",
+                            "name": "media_type",
+                            "aria-label": "",
+                            "type": "button_group",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "image": "Image",
+                                "video": "Looping Video"
+                            },
+                            "default_value": "",
+                            "return_format": "value",
+                            "allow_null": 0,
+                            "layout": "horizontal",
+                            "parent_repeater": "field_6533bd85ddfff"
+                        },
+                        {
+                            "key": "field_6533c1afffb4d",
+                            "label": "Image",
+                            "name": "image",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "<b>Image Size for Small Banner:<\/b><br>\r\nMinimum: 1600 by 610 pixels<br>\r\nPreferred for @2x: 1220 by 2061 pixels\r\n<br>\r\n\r\n\r\n<b>Image Size for Large Banner<\/b><br>\r\nMinimum: 1600 by 1031 pixels<br>\r\nPreferred for @2x: 3200 by 2061 pixels",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_6533bd8cde000",
+                                        "operator": "==",
+                                        "value": "image"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "preview_size": "medium",
+                            "parent_repeater": "field_6533bd85ddfff"
+                        },
+                        {
+                            "key": "field_6533c22cffb4e",
+                            "label": "Video File",
+                            "name": "video_file",
+                            "aria-label": "",
+                            "type": "file",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_6533bd8cde000",
+                                        "operator": "==",
+                                        "value": "video"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "library": "all",
+                            "min_size": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "parent_repeater": "field_6533bd85ddfff"
+                        }
+                    ]
+                },
+                {
+                    "key": "field_662ad280d2382",
+                    "label": "Centered Heading & Text",
+                    "name": "centered_heading_text",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6533bd54ddffe",
+                                "operator": "==",
+                                "value": "slider"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": false,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1714082487
+}
