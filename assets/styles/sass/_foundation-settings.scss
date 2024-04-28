@@ -66,10 +66,10 @@
 // ---------
 
 $global-font-size: 100%;
-$global-width: rem-calc(1200);
+$global-width: rem-calc(1332);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  "primary": #1779ba,
+  "primary": $color-gold,
   "secondary": #767676,
   "success": #3adb76,
   "warning": #ffae00,
@@ -78,11 +78,11 @@ $foundation-palette: (
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
-$black: #0a0a0a;
-$white: #fefefe;
+$black: #000;
+$white: #fff;
 $body-background: $white;
 $body-font-color: $black;
-$body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$body-font-family: $font-body;
 $body-safe-padding: false;
 $body-antialiased: true;
 $global-margin: 1rem;
@@ -141,8 +141,8 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: $body-font-family;
-$header-font-weight: $global-weight-normal;
+$header-font-family: $font-header;
+$header-font-weight: 700;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-color: inherit;
@@ -160,7 +160,7 @@ $header-styles: (
   medium: (
     'h1': ('font-size': 48),
     'h2': ('font-size': 40),
-    'h3': ('font-size': 31),
+    'h3': ('font-size': 40),
     'h4': ('font-size': 25),
     'h5': ('font-size': 20),
     'h6': ('font-size': 16),
@@ -295,14 +295,14 @@ $breadcrumbs-item-separator-color: $medium-gray;
 // 11. Button
 // ----------
 
-$button-font-family: inherit;
-$button-font-weight: null;
+$button-font-family: $font-header;
+$button-font-weight: 700;
 $button-padding: 0.85em 1em;
-$button-margin: 0 0 $global-margin 0;
+$button-margin: 0 0 0 0;
 $button-fill: solid;
 $button-background: $primary-color;
-$button-background-hover: scale-color($button-background, $lightness: -15%);
-$button-color: $white;
+$button-background-hover: null;
+$button-color: $black;
 $button-color-alt: $black;
 $button-radius: $global-radius;
 $button-border: 1px solid transparent;
@@ -310,8 +310,8 @@ $button-hollow-border-width: 1px;
 $button-sizes: (
   tiny: 0.6rem,
   small: 0.75rem,
-  default: 0.9rem,
-  large: 1.25rem,
+  default: 1.25rem,
+  large: 1.375rem,
 );
 $button-palette: $foundation-palette;
 $button-opacity-disabled: 0.25;
@@ -411,7 +411,7 @@ $dropdown-sizes: (
 // 18. Dropdown Menu
 // -----------------
 
-$dropdownmenu-arrows: true;
+$dropdownmenu-arrows: false;
 $dropdownmenu-arrow-color: $anchor-color;
 $dropdownmenu-arrow-size: 6px;
 $dropdownmenu-arrow-padding: 1.5rem;
@@ -498,9 +498,9 @@ $menu-margin: 0;
 $menu-nested-margin: $global-menu-nested-margin;
 $menu-items-padding: $global-menu-padding;
 $menu-simple-margin: 1rem;
-$menu-item-color-active: $white;
-$menu-item-color-alt-active: $black;
-$menu-item-background-active: get-color(primary);
+$menu-item-color-active: get-color(primary);
+$menu-item-color-alt-active: get-color(primary);
+$menu-item-background-active: transparent;
 $menu-icon-spacing: 0.25rem;
 $menu-state-back-compat: true;
 $menu-centered-back-compat: true;
@@ -761,7 +761,7 @@ $reveal-max-width: $global-width;
 $reveal-padding: $global-padding;
 $reveal-border: 1px solid $medium-gray;
 $reveal-radius: $global-radius;
-$reveal-zindex: 1005;
+$reveal-zindex: 9998;
 $reveal-overlay-background: rgba($black, 0.45);
 
 // 48. Slider
@@ -874,7 +874,7 @@ $tooltip-radius: $global-radius;
 // -----------
 
 $topbar-padding: 0.5rem;
-$topbar-background: $light-gray;
+$topbar-background: transparent;
 $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: 0.5rem 1rem 0.5rem 0;
 $topbar-input-width: 200px;
@@ -887,8 +887,8 @@ $xy-grid: true;
 $grid-container: $global-width;
 $grid-columns: 12;
 $grid-margin-gutters: (
-  "small": 20px,
-  "medium": 30px
+  "small": 32px,
+  "medium": 32px
 );
 $grid-padding-gutters: $grid-margin-gutters;
 $grid-container-padding: $grid-padding-gutters;

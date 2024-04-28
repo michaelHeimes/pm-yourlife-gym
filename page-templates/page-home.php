@@ -16,14 +16,35 @@ $fields = get_fields();
 			<main id="primary" class="site-main">
 		
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				
-					<header class="entry-header home-banner text-center">
 
-					</header><!-- .entry-header -->
+					<?php if( !empty( $fields['page_banner'] ) ) {
+						get_template_part('template-parts/section', 'page-banner',
+							array(
+								'page_banner' => $fields['page_banner'],
+							),
+						);
+					}?>
 				
-					<section class="entry-content" itemprop="text">
+					<div  itemprop="text">
+						
+						<?php if( !empty( $fields['sticky_parallax_rows'] ) ) {
+							get_template_part('template-parts/section', 'copy-ctas-image',
+								array(
+									'copy_ctas_image' => $fields['copy_ctas_image'],
+								),
+							);
+						}?>
+						
+						<?php if( !empty( $fields['copy_ctas_image'] ) ) {
+							get_template_part('template-parts/section', 'sticky-parallax-rows',
+								array(
+									'sticky_parallax_rows' => $fields['sticky_parallax_rows'],
+								),
+							);
+						}?>
+						
 						<?php the_content(); ?>
-					</section> <!-- end article section -->
+					</div> <!-- end article section -->
 							
 					<footer class="article-footer">
 						 <?php wp_link_pages(); ?>

@@ -1,0 +1,31 @@
+.copy-ctas-image {
+	padding-top: rem-calc(112);
+	.section-header.h2 {
+		margin-bottom: .55em;
+	}
+	.text-wrap {
+		margin-bottom: 2.5rem;
+		.button-group {
+			padding-top: rem-calc(42);
+		}
+	}
+	h2 {
+		line-height: .87;
+		margin: 0;
+		font-size: 2.931rem;
+		font-size: clamp(2.931rem, 2.466rem + 2.068vw, 4.188rem);
+		@include breakpoint(medium) {
+			font-size: 4.188rem;
+			font-size: clamp(2.931rem, 2.466rem + 2.068vw, 4.188rem);
+		}
+	}
+	h3 {
+		line-height: .92;
+		font-size: 2.188rem;
+		font-size: clamp(2.188rem, 1.84rem + 1.543vw, 3.125rem);
+		@include breakpoint(medium) {
+			font-size: 3.125rem;
+			font-size: clamp(2.188rem, 1.84rem + 1.543vw, 3.125rem);
+		}
+	}
+}

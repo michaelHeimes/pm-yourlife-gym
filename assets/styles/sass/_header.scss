@@ -1,8 +1,67 @@
 header.site-header {
-	transition: transform .5s ease;
+	background-color: #333333;
+	z-index: 5555;
+	
+	.utility-nav {
+		position: absolute;
+		top: 100%;
+		right: -0.9375rem;
+		ul {
+			margin: 0;
+			padding: 0;
+		}
+		li {
+			a {
+				font-size: rem-calc(16);
+				padding: 0.75rem 1.3em;
+				svg {
+					margin-right: rem-calc(7);
+					path {
+						transition: .25s ease;
+					}
+				}
+				transition: color .25s ease, background-color .25s ease;
+				&:hover {
+					color: $color-gold;
+					background-color: $color-alt-black;
+					svg {
+						path {
+							fill: $color-gold
+						}
+					}
+				}
+			}
+			&:first-child {
+				clip-path: polygon(11.5% 0%, 100% 0%, 100% 100%, -13% 100%);
+				a {
+					padding-left: 2.4rem;
+				}
+			}
+			&:last-child {
+				clip-path: polygon(0% 0%, 116% 0%, 86% 100%, 0% 100%);
+				a {
+					padding-right: 3.05rem;
+				}
+			}
+			& + .get-started {
+				a {
+					padding-right: 3rem;
+				}
+			}
+			&.get-started {
+				a {
+					font-size: rem-calc(18);
+					svg {
+						margin-right: 0;
+						margin-left: rem-calc(20);
+					}
+				}
+			}
+		}
+	}
 	
 	#top-bar-menu {
-		
+
 		li.logo {
 			@include breakpoint(medium) {
 
@@ -21,15 +80,14 @@ header.site-header {
 				margin: 0 .3rem 0rem;
 				
 				> a {
-					font-size: rem-calc(21);
+					font-family: $font-header;
+					font-weight: 700;
+					font-size: rem-calc(20);
 					text-transform: uppercase;
-					letter-spacing: 2.1px;
 					padding: 1.78rem 0.5rem 1.78rem;
-					position: relative;
 					
 					@include breakpoint(tablet) {
-						font-size: rem-calc(14);
-						letter-spacing: 1.4px;
+						font-size: rem-calc(20);
 					}
 					
 					span {

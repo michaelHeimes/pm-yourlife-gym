@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Large Colored Copy Block Template.
+ * Page Banner Block Template.
  *
  * @param   array $block The block settings and attributes.
  * @param   string $content The block inner HTML (empty).
@@ -10,24 +10,22 @@
  */
 
 // Create id attribute allowing for custom "anchor" value.
-$id = 'large-colored-copy-' . $block['id'];
+$id = 'page-banner-' . $block['id'];
 if( !empty($block['anchor']) ) {
     $id = $block['anchor'];
 }
 
-// Create class attribute allowing for custom "className" and "align" values.
-$className = 'large-colored-copy';
+// Create class attribute allowing for custom "className" value.
+$className = 'page-banner';
 if( !empty($block['className']) ) {
     $className .= ' ' . $block['className'];
-}
-if( !empty($block['align']) ) {
-    $className .= ' align' . $block['align'];
 }
 
 // Load values and assign defaults.
 $copy = get_field('copy') ?: 'Your copy here...';
 
-?>
-<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
-	<div><?php echo $copy;?></div>
-</div>
+get_template_part('template-parts/section', 'page-banner',
+    array(
+        'page_banner' => get_field('page_banner'),
+    ),
+);

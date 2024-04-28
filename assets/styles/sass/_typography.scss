@@ -1,0 +1,28 @@
+p,
+.p,
+ul:not(.menu),
+ol {
+	color: $black;
+	line-height: 2.1176;
+	font-size: rem-calc(17);
+}
+
+.entry-content {
+	a {
+		color: #048B12;
+		text-decoration: underline;
+		&:hover {
+			color: $color-gold;
+		}
+	}
+}
+
+h3,
+.h3 {
+	font-size: 1.75rem;
+	font-size: clamp(1.75rem, 1.472rem + 1.235vw, 2.5rem);
+	@include breakpoint(medium) {
+		font-size: 2.5rem;
+		font-size: clamp(1.75rem, 1.472rem + 1.235vw, 2.5rem);
+	}
+}

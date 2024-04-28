@@ -1,0 +1,50 @@
+.has-bg {
+	position: relative;
+	.bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-repeat: no-repeat;
+	}
+}
+.position-relative {
+	position: relative;
+}
+
+.color-white {
+	color: $white;
+}
+
+.color-alt-black {
+	color: $color-alt-black;
+}
+
+.bg-gold {
+	background-color: $color-gold;
+	color: $color-alt-black;
+	a {
+		color: $color-alt-black;
+	}
+}
+
+.bg-white {
+	background-color: $white;
+}
+
+.font-header {
+	font-family: $font-header;
+}
+
+.weight-semibold {
+	font-weight: 600;
+}
+
+.height-100 {
+	height: 100%;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}

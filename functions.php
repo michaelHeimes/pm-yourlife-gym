@@ -173,15 +173,23 @@ add_action( 'wp_enqueue_scripts', 'trailhead_scripts' );
 /**
  * Enqueue Google Fonts.
  */
-function enqueue_google_fonts() {
-	// Enqueue the Google Fonts stylesheet
-	wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Tenor+Sans&display=swapp', array(), null);
+wp_enqueue_style( 'dmc-google-font-fragment', 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap', array(), null );
+ 
+ function dmc_google_font_loader_tag_filter( $html, $handle ) {
+	 if ( $handle === 'dmc-google-font-fragment' ) {
+		 $rel_preconnect = "rel='stylesheet preconnect'";
+ 
+		 return str_replace(
+			 "rel='stylesheet'",
+			 $rel_preconnect,
+			 $html
+		 );
+	 }
+	 return $html;
+ }
+ add_filter( 'style_loader_tag', 'dmc_google_font_loader_tag_filter', 10, 2 );
 
-	// Preload the Google Fonts stylesheet
-	add_action('wp_head', function () {
-		echo '<link rel="preload" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Tenor+Sans&display=swap" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">';
-	});
-}
+
 
 
 // Disable Tabelpress Stylesheet
