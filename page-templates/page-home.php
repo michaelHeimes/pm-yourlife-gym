@@ -27,7 +27,7 @@ $fields = get_fields();
 				
 					<div  itemprop="text">
 						
-						<?php if( !empty( $fields['sticky_parallax_rows'] ) ) {
+						<?php if( !empty( $fields['copy_ctas_image'] ) ) {
 							get_template_part('template-parts/section', 'copy-ctas-image',
 								array(
 									'copy_ctas_image' => $fields['copy_ctas_image'],
@@ -36,9 +36,9 @@ $fields = get_fields();
 						}?>
 						
 						<?php if( !empty( $fields['copy_ctas_image'] ) ) {
-							get_template_part('template-parts/section', 'sticky-parallax-rows',
+							get_template_part('template-parts/section', 'parallax-rows',
 								array(
-									'sticky_parallax_rows' => $fields['sticky_parallax_rows'],
+									'parallax_rows' => $fields['parallax_rows'] ?? null,
 								),
 							);
 						}?>

@@ -17,6 +17,10 @@
 	color: $white;
 }
 
+.color-light-gray {
+	color: $light-gray;
+}
+
 .color-alt-black {
 	color: $color-alt-black;
 }
@@ -31,6 +35,11 @@
 
 .bg-white {
 	background-color: $white;
+}
+
+.bg-black {
+	background-color: $black;
+	color: $white;
 }
 
 .font-header {

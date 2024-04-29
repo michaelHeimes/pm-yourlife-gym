@@ -23,7 +23,7 @@ $image = $copy_ctas_image['image'] ?? null;
 					<?php if( !empty($heading) || !empty($subheading) ):?>
 						<div class="section-header h2">
 							<?php if( !empty($heading)):?>
-								<h2 class="uppercase"><?=esc_html($heading);?></h2>
+								<h2><?=esc_html($heading);?></h2>
 							<?php endif;?>
 							<?php if( !empty($subheading) ):?>
 								<h3><?=esc_html($subheading);?></h3>

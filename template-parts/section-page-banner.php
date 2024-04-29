@@ -40,7 +40,7 @@ $slides = $page_banner['slides'] ?? null;
 							<?php if( $type == 'video' && !empty( $slide['video_file'] ) ):?>
 								<div class="video-wrap">
 									<video width="1600" height="900" playsinline loop muted>
-									  <source src="<?php echo esc_url( $slide['video_file']['url'] );?>" type="video/mp4" />
+									  <source src="<?= esc_url( $slide['video_file']['url'] );?>" type="video/mp4" />
 									</video>
 								</div>
 							<?php endif;?>
