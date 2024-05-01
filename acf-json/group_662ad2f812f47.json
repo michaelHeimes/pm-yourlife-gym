@@ -61,6 +61,45 @@
             "return_format": "array"
         },
         {
+            "key": "field_66318c6dc26e5",
+            "label": "Pre-footer CTA",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_66318c8dc26e6",
+            "label": "Pre-footer CTA",
+            "name": "clone-pre-footer_cta",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "field_6631830f3fd6a"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
             "key": "field_662ba7cdf3189",
             "label": "Footer",
             "name": "",
@@ -78,11 +117,11 @@
             "endpoint": 0
         },
         {
-            "key": "field_662ad37fab69e",
-            "label": "Contact Info",
-            "name": "",
+            "key": "field_662fa74e19cae",
+            "label": "Footer Logo",
+            "name": "footer_logo",
             "aria-label": "",
-            "type": "tab",
+            "type": "image",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -91,8 +130,16 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
-            "endpoint": 0
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
         },
         {
             "key": "field_662ba7def318a",
@@ -113,6 +160,64 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_662ba808f318b",
+            "label": "Subfooter Links",
+            "name": "subfooter_links",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Examples would be: Privacy Policy, Terms of Ude, etc.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_662ba835f318c",
+                    "label": "Link",
+                    "name": "link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "parent_repeater": "field_662ba808f318b"
+                }
+            ]
+        },
+        {
+            "key": "field_662ad37fab69e",
+            "label": "Contact Info",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
         },
         {
             "key": "field_662ad4308010f",
@@ -210,47 +315,6 @@
             "rows": 7,
             "placeholder": "",
             "new_lines": "br"
-        },
-        {
-            "key": "field_662ba808f318b",
-            "label": "Subfooter Links",
-            "name": "subfooter_links",
-            "aria-label": "",
-            "type": "repeater",
-            "instructions": "Examples would be: Privacy Policy, Terms of Ude, etc.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "table",
-            "pagination": 0,
-            "min": 0,
-            "max": 0,
-            "collapsed": "",
-            "button_label": "Add Row",
-            "rows_per_page": 20,
-            "sub_fields": [
-                {
-                    "key": "field_662ba835f318c",
-                    "label": "Link",
-                    "name": "link",
-                    "aria-label": "",
-                    "type": "link",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "parent_repeater": "field_662ba808f318b"
-                }
-            ]
         }
     ],
     "location": [
@@ -271,5 +335,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1714139945
+    "modified": 1714523311
 }

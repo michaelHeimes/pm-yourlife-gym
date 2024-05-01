@@ -1,5 +1,17 @@
 <?php
 $copy_ctas_image = $args['copy_ctas_image'] ?? null;
+
+$slug = '';
+$id_for_anchor = $copy_ctas_image['id_for_anchor'] ?? null;
+$headline = $copy_ctas_image['headline'] ?? null;
+if( !empty($id_for_anchor) ) {
+	$slug = sanitize_title($id_for_anchor);
+} elseif( !empty( $headline ) ) {
+	$slug = sanitize_title($headline) ?? null;
+} else {
+	$slug = 'page-intro';
+}
+
 $heading = $copy_ctas_image['heading'] ?? null;
 $subheading = $copy_ctas_image['subheading'] ?? null;
 $copy = $copy_ctas_image['copy'] ?? null;
@@ -7,19 +19,19 @@ $button_link_1 = $copy_ctas_image['button_link_1'] ?? null;
 $button_link_2 = $copy_ctas_image['button_link_2'] ?? null;
 $image = $copy_ctas_image['image'] ?? null;
 ?>
-<section class="copy-ctas-image">
+<section id="<?=esc_attr($slug);?>" class="copy-ctas-image" data-magellan-target="<?=esc_attr($slug);?>">
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x align-center tablet-flex-dir-row-reverse">
 			<?php if( !empty( $image ) ) {
 				$imgID = $image['ID'];
 				$img_alt = trim( strip_tags( get_post_meta( $imgID, '_wp_attachment_image_alt', true ) ) );
 				$img = wp_get_attachment_image( $imgID, 'full', false, [ "class" => "", "alt"=>$img_alt] );
-				echo '<div class="img-wrap cell small-12 medium-6 tablet-5">';
+				echo '<div class="img-wrap cell small-12 medium-8 tablet-5">';
 				echo $img;
 				echo '</div>';
 			}?>
 			<?php if( !empty($heading) || !empty($subheading) || !empty($copy) || !empty($button_link_1) || !empty($button_link_2) ):?>
-				<div class="text-wrap cell small-12 medium-6 tablet-7">
+				<div class="text-wrap cell small-12 tablet-7">
 					<?php if( !empty($heading) || !empty($subheading) ):?>
 						<div class="section-header h2">
 							<?php if( !empty($heading)):?>

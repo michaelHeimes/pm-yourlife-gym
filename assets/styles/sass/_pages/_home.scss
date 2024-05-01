@@ -1,3 +1,51 @@
 .page-template-page-home {
-	
+	.anchor-nav {
+		position: fixed;
+		z-index: 5;
+		right: 0;
+		bottom: 30px;
+		padding: 3px 0 3px 3px;
+		clip-path: polygon(0% 0%, 100% 0%, 100% 120%, 0% 91%);
+		.inner {
+			padding: .4rem 0.45rem .7rem;
+			clip-path: polygon(0% 0%, 100% 0%, 100% 120%, 0% 91%);
+		}
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: -2px;
+			left: -2px;
+			bottom: -2px;
+			background-color: $color-gold;
+		}
+		a#anchor-prev,
+		a#anchor-next {
+			svg {
+				path {
+					transition: .25s ease;
+				}
+			}
+			&:not([href="#null"]):hover {
+				svg path {
+					fill: $white;
+				}
+			}
+			&[href="#null"] {
+				opacity: .5;
+				cursor: auto;
+			}
+		}
+		ul {
+			padding: 0.3rem 0;
+			li {
+				a {
+					padding: 0;
+					span {
+						margin: 8px;
+					}
+				}
+			}
+		}
+	}
 }

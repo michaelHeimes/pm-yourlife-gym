@@ -1,9 +1,19 @@
 .copy-ctas-image {
-	padding-top: rem-calc(112);
+	padding-top: rem-calc(78.4);
+	padding-bottom: rem-calc(95.2);
+	@include breakpoint(medium) {
+		padding-top: rem-calc(112);
+		padding-bottom: rem-calc(136);
+	}
 	.section-header.h2 {
 		margin-bottom: .55em;
 	}
+	.img-wrap {
+		@include breakpoint(medium down) {
+		}
+	}
 	.text-wrap {
+		margin-top: 3rem;
 		margin-bottom: 2.5rem;
 		.button-group {
 			padding-top: rem-calc(42);

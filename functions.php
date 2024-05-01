@@ -159,6 +159,9 @@ function trailhead_scripts() {
 	
 	wp_enqueue_style( 'trailhead-style-min', get_template_directory_uri() . '/assets/styles/style.min.css', array(), _S_VERSION );
 	
+	wp_enqueue_script( 'gsap', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'scrolltrigger', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js', array(), _S_VERSION, true );
+	
 	wp_enqueue_script( 'app-js', get_template_directory_uri() . '/assets/scripts/app.min.js', array('jquery'), _S_VERSION, true );
 	
 	//wp_enqueue_script( 'trailhead-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
@@ -173,10 +176,10 @@ add_action( 'wp_enqueue_scripts', 'trailhead_scripts' );
 /**
  * Enqueue Google Fonts.
  */
-wp_enqueue_style( 'dmc-google-font-fragment', 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap', array(), null );
+wp_enqueue_style( 'dmc-', 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap', array(), null );
  
- function dmc_google_font_loader_tag_filter( $html, $handle ) {
-	 if ( $handle === 'dmc-google-font-fragment' ) {
+ function google_font_loader_tag_filter( $html, $handle ) {
+	 if ( $handle === 'dmc-' ) {
 		 $rel_preconnect = "rel='stylesheet preconnect'";
  
 		 return str_replace(
@@ -187,7 +190,7 @@ wp_enqueue_style( 'dmc-google-font-fragment', 'https://fonts.googleapis.com/css2
 	 }
 	 return $html;
  }
- add_filter( 'style_loader_tag', 'dmc_google_font_loader_tag_filter', 10, 2 );
+ add_filter( 'style_loader_tag', 'google_font_loader_tag_filter', 10, 2 );
 
 
 

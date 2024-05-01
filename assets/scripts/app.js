@@ -49,8 +49,12 @@
 // Responsive Images
 //@prepros-prepend vendor/foundation/js/plugins/foundation.interchange.js
 
+// Anchor Link Scrolling
+//@prepros-prepend vendor/foundation/js/plugins/foundation.smoothScroll.js
+
+
 // Navigation Widget
-//@*prepros-prepend vendor/foundation/js/plugins/foundation.magellan.js
+//@prepros-prepend vendor/foundation/js/plugins/foundation.magellan.js
 
 // Offcanvas Naviagtion Option
 //@prepros-prepend vendor/foundation/js/plugins/foundation.offcanvas.js
@@ -63,10 +67,6 @@
 
 // Form UI element
 //@*prepros-prepend vendor/foundation/js/plugins/foundation.slider.js
-
-// Anchor Link Scrolling
-//@prepros-prepend vendor/foundation/js/plugins/foundation.smoothScroll.js
-
 // Sticky Elements
 //@prepros-prepend vendor/foundation/js/plugins/foundation.sticky.js
 
@@ -157,6 +157,84 @@
         });    
     }
     
+    _app.home_page_anchors = function() {
+        if( document.body.classList.contains('home') ) {
+            // Listen for the update event on Magellan
+            const anchorNav =  $('#anchor-nav');
+            
+            $(anchorNav ).on('update.zf.magellan', function() {
+
+                // Get the active anchor
+                var activeAnchor = $('#anchor-nav ul > li > a.is-active');
+                if (!activeAnchor.length) return;
+
+                // Get the ID of the previous element
+                var prevID = null;
+                var prevSibling = activeAnchor.parent().prev();
+                if (prevSibling.length) {
+                    var prevAnchor = prevSibling.find('a');
+                    if (prevAnchor.length) {
+                        prevID = prevAnchor.attr('href').substring(1); // Remove the '#' from the href
+                    }
+                }
+                
+                // Get the ID of the next element
+                var nextID = null;
+                var nextSibling = activeAnchor.parent().next();
+                if (nextSibling.length) {
+                    var nextAnchor = nextSibling.find('a');
+                    if (nextAnchor.length) {
+                        nextID = nextAnchor.attr('href').substring(1); // Remove the '#' from the href
+                    }
+                }
+                
+                // Set the href of the closest #anchor-prev to the ID of the previous element
+                $('#anchor-prev').attr('href', '#' + prevID);
+                
+                // Set the href of the closest #anchor-next to the ID of the next element
+                $('#anchor-next').attr('href', '#' + nextID);   
+            });
+
+        }
+//         if( document.body.classList.contains('home') ) {
+//             // Select all elements with the attribute 'data-magellan-target'
+//             const targets = document.querySelectorAll('[data-magellan-target]');
+//             
+//             // Select the ul inside #anchor-nav
+//             const anchorNavUl = document.querySelector('#anchor-nav ul');
+//             
+//             // Loop through each target element
+//             targets.forEach(target => {
+//                 // Create li and a elements
+//                 const listItem = document.createElement('li');
+//                 const anchor = document.createElement('a');
+//                 
+//                 // Get the value of 'data-magellan-target'
+//                 const targetId = target.getAttribute('data-magellan-target');
+//                 
+//                 // Set the href attribute of the anchor
+//                 anchor.setAttribute('href', `#${targetId}`);
+//                 
+//                 // Set the innerText of the anchor to the targetId
+//                 anchor.innerText = targetId;
+//                 
+//                 // Append the anchor to the li
+//                 listItem.appendChild(anchor);
+//                 
+//                 // Append the li to the ul
+//                 anchorNavUl.appendChild(listItem);
+//             });
+//             
+//             // After dynamically adding the navigation items
+//             // Initialize Magellan on #anchor-nav
+//             Foundation.Magellan.defaults.threshold = 0;
+//             const anchorNav = new Foundation.Magellan(anchorNavUl);
+//             anchorNav.reflow();
+// 
+// 
+//         }
+    }
+        
     _app.banner_slider = function() {
         const bannerSlider = document.querySelector('.page-banner .bg-slider');
         if(bannerSlider) {
@@ -173,7 +251,19 @@
             function playVideoInActiveSlide() {
               var activeSlide = document.querySelector('.swiper-slide-active video');
               if (activeSlide) {
-                activeSlide.play();
+                // Show loading animation.
+                const playPromise = activeSlide.play();
+                
+                if (playPromise !== undefined) {
+                    playPromise.then(_ => {
+                      // Automatic playback started!
+                      // Show playing UI.
+                    })
+                    .catch(error => {
+                      // Auto-play was prevented
+                      // Show paused UI.
+                    });
+                }
               }
             }
             
@@ -232,8 +322,107 @@
                 setHeroBannerMinHeight();
             });
         }
-
         
+    }
+    
+    _app.autoPlayLoopedVideos = function() {
+        const loopingVideos = document.querySelectorAll('.looping-video');
+        if(loopingVideos) {
+            loopingVideos.forEach(function (loopingVideo) {
+                
+                const playPromise = loopingVideo.play();
+                
+                if (playPromise !== undefined) {
+                    playPromise.then(_ => {
+                      // Automatic playback started!
+                      // Show playing UI.
+                    })
+                    .catch(error => {
+                      // Auto-play was prevented
+                      // Show paused UI.
+                    });
+                }
+                
+            });
+        }
+    }
+    
+    _app.parallaxRows = function() {
+        const offsetCtas = document.querySelectorAll('.offset-cta');
+        
+        offsetCtas.forEach(offsetCta => {
+            const imgWrap = offsetCta.querySelector('.img-wrap .inner');
+            const ctaCard = offsetCta.querySelector('.cta-card');
+            
+            gsap.set(imgWrap, {y:'35%'})
+
+            gsap.to(imgWrap, {
+              yPercent: -65,
+              ease: "none",
+              scrollTrigger: {
+                trigger: offsetCta,
+                start: "top bottom", // the default values
+                end: "bottom top",
+                scrub: true
+              }, 
+            });
+            
+            gsap.to(ctaCard, {
+              yPercent: -45,
+              ease: "none",
+              scrollTrigger: {
+                trigger: offsetCta,
+                start: "top bottom", // the default values
+                end: "bottom top",
+                scrub: true
+              }, 
+            });
+        
+            // gsap.to([imgWrap, ctaCard], {
+            //     y: () => {
+            //         const bounds = offsetCta.getBoundingClientRect();
+            //         const offset = bounds.top - window.innerHeight;
+            //         const yOffset = Math.max(0, Math.min(100, offset)) - 100;
+            //         return `-${yOffset}px`;
+            //     },
+            //     ease: "power1.out",
+            //     scrollTrigger: {
+            //         trigger: offsetCta,
+            //         start: "top bottom",
+            //         end: "bottom bottom",
+            //         scrub: true
+            //     }
+            // });
+        });
+    }
+    
+    _app.footer_nav_cols = function() {
+        // Function to set the height of .main-nav to match the tallest li
+        function setMainNavHeight() {
+            // Get all footer .main-nav > li elements
+            const navItems = document.querySelectorAll('footer .main-nav > li');
+            
+            // Initialize variable to store the tallest height
+            let tallestHeight = 0;
+        
+            // Loop through each nav item to find the tallest height
+            navItems.forEach(function(navItem) {
+                const navItemHeight = navItem.offsetHeight;
+                if (navItemHeight > tallestHeight) {
+                    tallestHeight = navItemHeight;
+                }
+            });
+        
+            // Set the height of .main-nav to the tallest height
+            const mainNav = document.querySelector('footer .main-nav');
+            mainNav.style.height = tallestHeight + 'px';
+        }
+        
+        // Set .main-nav height to match tallest li on initial load
+        setMainNavHeight();
+        
+        // Recalculate .main-nav height on window resize
+        window.addEventListener('resize', setMainNavHeight);
     }
             
     _app.init = function() {
@@ -246,8 +435,12 @@
         
         // Custom Functions
         //_app.mobile_takover_nav();
+        _app.home_page_anchors();
         _app.banner_slider();
+        _app.autoPlayLoopedVideos();
         _app.video_lazyload();
+        _app.parallaxRows();
+        //_app.footer_nav_cols();
     }
     
     

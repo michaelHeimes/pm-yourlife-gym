@@ -4,6 +4,18 @@ $rows = $parallax_rows['parallax_rows']['rows'] ?? null;
 ?>
 <section class="parallax-rows">
 	<?php if($rows): $i = 1; foreach($rows as $row):
+		
+		$slug = '';
+		$id_for_anchor = $row['id_for_anchor'] ?? null;
+		$headline = $row['headline'] ?? null;
+		if( !empty($id_for_anchor) ) {
+			$slug = sanitize_title($id_for_anchor);
+		} elseif( !empty( $headline ) ) {
+			$slug = sanitize_title($headline) ?? null;
+		} else {
+			$slug = 'row-' . $i;
+		}
+		
 		$background_type = $row['background_type'] ?? null;
 		$headline = $row['headline'] ?? null;
 		$background_image = $row['background_image'] ?? null;
@@ -15,7 +27,7 @@ $rows = $parallax_rows['parallax_rows']['rows'] ?? null;
 		$button_2 = $cta_card['button_2'] ?? null;
 		$cta_card_offset_image = $cta_card['offset_image'] ?? null;
 	?>
-	<div class="single-row">
+	<div id="<?=esc_attr($slug);?>" class="single-row" data-magellan-target="<?=esc_attr($slug);?>">
 		<div class="background grid-x align-center align-middle has-bg">
 			<?php if( $background_type == 'image' && !empty( $background_image ) ) {
 				$imgID = $background_image['ID'];
@@ -27,7 +39,7 @@ $rows = $parallax_rows['parallax_rows']['rows'] ?? null;
 			}?>
 			<?php if( $background_type == 'video' && !empty( $background_video_file ) ):?>
 				<div class="bg video-wrap">
-					<video width="1600" height="900" playsinline loop muted>
+					<video class="looping-video" width="1600" preload="none" height="900" playsinline loop muted>
 					  <source src="<?= esc_url( $background_video_file['url'] );?>" type="video/mp4" />
 					</video>
 				</div>
@@ -43,7 +55,7 @@ $rows = $parallax_rows['parallax_rows']['rows'] ?? null;
 						$imgID = $cta_card_offset_image['ID'];
 						$img_alt = trim( strip_tags( get_post_meta( $imgID, '_wp_attachment_image_alt', true ) ) );
 						$img = wp_get_attachment_image( $imgID, 'full', false, [ "class" => "", "alt"=>$img_alt] );
-						echo '<div class="img-wrap cell small-12 tablet-shrink">';
+						echo '<div class="img-wrap cell small-12 tablet-6">';
 						echo '<div class="inner">';
 						echo $img;
 						echo '</div>';

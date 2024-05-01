@@ -15,7 +15,9 @@ header.site-header {
 				font-size: rem-calc(16);
 				padding: 0.75rem 1.3em;
 				svg {
-					margin-right: rem-calc(7);
+					@include breakpoint(medium) {
+						margin-right: rem-calc(7);
+					}
 					path {
 						transition: .25s ease;
 					}
@@ -32,9 +34,27 @@ header.site-header {
 				}
 			}
 			&:first-child {
-				clip-path: polygon(11.5% 0%, 100% 0%, 100% 100%, -13% 100%);
+				position: relative;
+				clip-path: polygon(40% 0%, 100% 0%, 100% 100%, -30% 100%);
+				@include breakpoint(medium) {
+					clip-path: polygon(11.5% 0%, 100% 0%, 100% 100%, -13% 100%);
+				}
 				a {
-					padding-left: 2.4rem;
+					padding-left: 2rem;
+					@include breakpoint(medium) {
+						padding-left: 2.4rem;
+					}
+				}
+				&:before {
+					content: '';
+					display: block;
+					position: absolute;
+					z-index: -1;
+					top: 0;
+					right: -1px;
+					bottom: 0;
+					width: 2px;
+					background: $color-gold;
 				}
 			}
 			&:last-child {
@@ -74,7 +94,7 @@ header.site-header {
 			}			
 		}
 			
-		#main-nav {
+		.main-nav {
 			align-items: center;
 			>li {
 				margin: 0 .3rem 0rem;

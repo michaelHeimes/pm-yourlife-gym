@@ -1,6 +1,8 @@
 <?php 
 $page_banner = $args['page_banner'] ?? null;
+$id_for_anchor = $page_banner['id_for_anchor'] ?? null;
 $style = $page_banner['style'] ?? null; 
+
 
 //Hero Fields
 $headline_hero =  $page_banner['headline_hero'] ?? null;
@@ -16,7 +18,7 @@ $slider_transition_delay = $page_banner['slider_transition_delay'] ?? null;
 $slides = $page_banner['slides'] ?? null;
 
 ?>
-<header class="entry-header page-banner has-bg grid-x align-middle style-<?= esc_attr( $style );?>">
+<header class="entry-header page-banner has-bg grid-x align-middle style-<?= esc_attr( $style );?>"<?php if( !empty($id_for_anchor) ) { echo ' data-magellan-target="' . sanitize_title($id_for_anchor) . '"'; }?>>
 	<?php if( $style == 'hero-slider' ) { echo '<div class="bg">';}?>
 		<?php if( $style == 'hero-slider' ):?>
 			<div class="accent-wrap">
@@ -39,7 +41,7 @@ $slides = $page_banner['slides'] ?? null;
 							}?>
 							<?php if( $type == 'video' && !empty( $slide['video_file'] ) ):?>
 								<div class="video-wrap">
-									<video width="1600" height="900" playsinline loop muted>
+									<video width="1600" preload="none" height="900" playsinline loop muted>
 									  <source src="<?= esc_url( $slide['video_file']['url'] );?>" type="video/mp4" />
 									</video>
 								</div>

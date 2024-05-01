@@ -67,16 +67,16 @@
 	</div>
 	
 </div>
-		<?php if( !empty( get_field('street_address', 'option') ) || !empty( get_field('directions_url', 'option') ) || !empty( get_field('phone_number', 'option') ) || !empty( get_field('sticky_get_started_cta', 'option') ) ):?>
+<?php if( !empty( get_field('street_address', 'option') ) || !empty( get_field('directions_url', 'option') ) || !empty( get_field('phone_number', 'option') ) || !empty( get_field('sticky_get_started_cta', 'option') ) ):?>
 	<nav class="utility-nav bg">
 		<ul class="grid-x">
 			<?php if( !empty( get_field('street_address', 'option') ) ):?>
 				<li class="grid-x align-middle">
 					<?php if( !empty( get_field('directions_url', 'option') ) ):?>
-						<a class="grid-x align-middle bg-gold font-header weight-semibold height-100" href="<?=get_field('directions_url', 'option');?>" target="_blank">	
+						<a class="grid-x align-middle bg-gold font-header weight-semibold height-100" href="<?=esc_url(get_field('directions_url', 'option'));?>" target="_blank" aria-label="opens direction in new tab">	
 					<?php endif;?>
 					<svg xmlns="http://www.w3.org/2000/svg" width="14" height="20" viewBox="0 0 14 20"> <path id="ic_place_24px" d="M12,2A7,7,0,0,0,5,9c0,5.25,7,13,7,13s7-7.75,7-13A7,7,0,0,0,12,2Zm0,9.5A2.5,2.5,0,1,1,14.5,9,2.5,2.5,0,0,1,12,11.5Z" transform="translate(-5 -2)" fill="#210202"/></svg>
-					<span><?=get_field('street_address', 'option');?></span>
+					<span class="show-for-medium"><?=get_field('street_address', 'option');?></span>
 					<?php if( !empty( get_field('directions_url', 'option') ) ):?>
 						</a>	
 					<?php endif;?>
@@ -84,9 +84,9 @@
 			<?php endif;?>
 			<?php if( !empty( get_field('phone_number', 'option') ) ):?>
 				<li class="grid-x align-middle">
-					<a class="grid-x align-middle bg-gold font-header weight-semibold height-100" href="<?=get_field('phone_number', 'option');?>" target="_blank">	
+					<a class="grid-x align-middle bg-gold font-header weight-semibold height-100" href="tel:<?=esc_html(get_field('phone_number', 'option'));?>" target="_blank">	
 						<svg xmlns="http://www.w3.org/2000/svg" width="13.132" height="22.223" viewBox="0 0 13.132 22.223"><path id="ic_phone_iphone_24px" d="M15.606,1H7.525A2.526,2.526,0,0,0,5,3.525V20.7a2.526,2.526,0,0,0,2.525,2.525h8.081A2.526,2.526,0,0,0,18.132,20.7V3.525A2.526,2.526,0,0,0,15.606,1ZM11.566,22.213A1.515,1.515,0,1,1,13.081,20.7,1.513,1.513,0,0,1,11.566,22.213Zm4.546-4.041H7.02V4.03h9.091Z" transform="translate(-5 -1)" fill="#210202"/></svg>
-						<span><?=get_field('phone_number', 'option');?></span>
+						<span class="show-for-medium"><?=esc_html(get_field('phone_number', 'option'));?></span>
 					</a>	
 				</li>
 			<?php endif;?>

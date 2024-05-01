@@ -19,6 +19,26 @@
             "layout": "block",
             "sub_fields": [
                 {
+                    "key": "field_663131e4e3724",
+                    "label": "ID for Anchor",
+                    "name": "id_for_anchor",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Only use on pages where a sticky anchor links nav is desired.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
                     "key": "field_6533bd54ddffe",
                     "label": "Style",
                     "name": "style",
@@ -405,6 +425,26 @@
             "layout": "block",
             "sub_fields": [
                 {
+                    "key": "field_663132e07aacd",
+                    "label": "ID for Anchor",
+                    "name": "id_for_anchor",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Only use on pages where a sticky anchor links nav is desired.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
                     "key": "field_662d90b46a196",
                     "label": "Heading",
                     "name": "heading",
@@ -561,6 +601,27 @@
                     "button_label": "Add Row",
                     "rows_per_page": 20,
                     "sub_fields": [
+                        {
+                            "key": "field_66313302d4982",
+                            "label": "ID for Anchor",
+                            "name": "id_for_anchor",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "Only use on pages where a sticky anchor links nav is desired.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_662da5b1e4dc4"
+                        },
                         {
                             "key": "field_662da5bde4dc5",
                             "label": "Background Type",
@@ -788,6 +849,87 @@
                     ]
                 }
             ]
+        },
+        {
+            "key": "field_6631830f3fd6a",
+            "label": "Pre-footer CTA",
+            "name": "pre-footer_cta",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_663183243fd6b",
+                    "label": "Background Image",
+                    "name": "background_image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "preview_size": "medium"
+                },
+                {
+                    "key": "field_663183333fd6c",
+                    "label": "Headline",
+                    "name": "headline",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_6631837c2d5cf",
+                    "label": "",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "message",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "<p>The address and phone number are set in Theme Settings \/ Contact Info.<\/p>\r\n<p>The link for Get Started is set in Theme Settings \/ Header<\/p>",
+                    "new_lines": "wpautop",
+                    "esc_html": 0
+                }
+            ]
         }
     ],
     "location": [
@@ -808,5 +950,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1714354967
+    "modified": 1714523326
 }
