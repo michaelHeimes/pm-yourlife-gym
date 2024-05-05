@@ -45,6 +45,22 @@
             "preview_size": "thumbnail"
         },
         {
+            "key": "field_6637ec3417090",
+            "label": "Mobile Nav Button Link",
+            "name": "mobile_nav_button_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
             "key": "field_662ad44280110",
             "label": "Sticky Get Started CTA",
             "name": "sticky_get_started_cta",
@@ -54,7 +70,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -335,5 +351,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1714523311
+    "modified": 1714941039
 }

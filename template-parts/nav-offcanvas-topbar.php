@@ -8,9 +8,9 @@
 
 <div class="top-bar-wrap grid-container fluid">
 
-	<div class="top-bar position-relative" id="top-bar-menu">
+	<div class="top-bar position-relative grid-x grid-padding-x align-middle" id="top-bar-menu">
 	
-		<div class="top-bar-left float-left">
+		<div class="cell shrink">
 			
 			<div class="site-branding show-for-sr">
 				<?php if( !empty( get_field('header_logo') ) ) {
@@ -49,7 +49,7 @@
 			</ul>
 						
 		</div>
-		<div class="top-bar-right show-for-tablet">
+		<div class="show-for-tablet cell auto">
 			<div class="grid-x align-right">
 				<div class="cell shrink">
 					<nav>
@@ -58,10 +58,15 @@
 				</div>
 			</div>
 		</div>
-		<div class="menu-toggle-wrap top-bar-right float-right hide-for-tablet">
+		<div class="menu-toggle-wrap top-bar-right float-right hide-for-tablet cell auto grid-x align-right">
 			<ul class="menu">
 				<!-- <li><button class="menu-icon" type="button" data-toggle="off-canvas"></button></li> -->
-				<li><a id="menu-toggle" data-toggle="off-canvas"><span></span><span></span><span></span></a></li>
+				<li>
+					<button class="menu-toggle no-style" type="button" data-toggle="off-canvas">
+						<svg xmlns="http://www.w3.org/2000/svg" width="28.51" height="28.883"><defs><filter id="a" x="0" y="0" width="28.51" height="28.883" filterUnits="userSpaceOnUse"><feOffset dx="1" dy="1"/><feGaussianBlur result="blur"/><feFlood/><feComposite operator="in" in2="blur"/><feComposite in="SourceGraphic"/></filter></defs><g filter="url(#a)"><path data-name="ic_menu_24px" d="M0 27.883h27.51v-4.647H0Zm0-11.618h27.51v-4.647H0ZM0 0v4.647h27.51V0Z" fill="#c4a75f"/></g></svg>
+					</button>
+					
+				</li>
 			</ul>
 		</div>
 	</div>
@@ -83,7 +88,7 @@
 				</li>
 			<?php endif;?>
 			<?php if( !empty( get_field('phone_number', 'option') ) ):?>
-				<li class="grid-x align-middle">
+				<li class="grid-x align-middle phone">
 					<a class="grid-x align-middle bg-gold font-header weight-semibold height-100" href="tel:<?=esc_html(get_field('phone_number', 'option'));?>" target="_blank">	
 						<svg xmlns="http://www.w3.org/2000/svg" width="13.132" height="22.223" viewBox="0 0 13.132 22.223"><path id="ic_phone_iphone_24px" d="M15.606,1H7.525A2.526,2.526,0,0,0,5,3.525V20.7a2.526,2.526,0,0,0,2.525,2.525h8.081A2.526,2.526,0,0,0,18.132,20.7V3.525A2.526,2.526,0,0,0,15.606,1ZM11.566,22.213A1.515,1.515,0,1,1,13.081,20.7,1.513,1.513,0,0,1,11.566,22.213Zm4.546-4.041H7.02V4.03h9.091Z" transform="translate(-5 -1)" fill="#210202"/></svg>
 						<span class="show-for-medium"><?=esc_html(get_field('phone_number', 'option'));?></span>

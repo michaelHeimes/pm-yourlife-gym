@@ -1,9 +1,9 @@
 {
-    "key": "group_662d44877e675",
-    "title": "Page Banner",
+    "key": "group_6632e30b45c70",
+    "title": "Default Page",
     "fields": [
         {
-            "key": "field_662d44882be59",
+            "key": "field_6632e30b646d6",
             "label": "Page Banner",
             "name": "clone-page_banner",
             "aria-label": "",
@@ -28,9 +28,9 @@
     "location": [
         [
             {
-                "param": "block",
+                "param": "page_template",
                 "operator": "==",
-                "value": "acf\/page-banner"
+                "value": "default"
             }
         ]
     ],
@@ -43,5 +43,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1714243250
+    "modified": 1714610998
 }

@@ -1,0 +1,105 @@
+.page-template-page-cta {
+	.accordion-blocks-wrap {
+		padding-top: rem-calc(36.4);
+		padding-bottom: rem-calc(86.8);
+		@include breakpoint(medium) {
+			padding-top: rem-calc(106);
+			padding-bottom: rem-calc(124);
+		}
+		.accordion {
+			background: transparent;
+			border: 0;
+			.accordion-item {
+				border: 0;
+				hr {
+					border-color: $dark-gray;
+					margin-top: 2.1rem;
+					margin-bottom: 2.275rem;
+					margin-top: clamp(2.1rem, 1.457rem + 1.714vw, 3rem);
+					margin-bottom: clamp(2.275rem, 1.579rem + 1.857vw, 3.25rem);
+					@include breakpoint(medium) {
+						margin-top: 3rem;
+						margin-bottom: 3.25rem;
+						margin-top: clamp(2.1rem, 1.457rem + 1.714vw, 3rem);
+						margin-bottom: clamp(2.275rem, 1.579rem + 1.857vw, 3.25rem);
+					}
+				}
+				.accordion-title {
+					padding: 0;
+					border: 0;
+					color: $black;
+					@include breakpoint(small down) {
+						padding-bottom: rem-calc(36);
+					}
+					&:before {
+						display: none;
+					}
+					.number {
+						color: $color-gold;
+					}
+					h2 {
+						margin: 0;
+						line-height: 1.065;
+						font-size: 2.013rem;
+						font-size: clamp(2.013rem, 1.396rem + 1.643vw, 2.875rem);
+						@include breakpoint(medium) {
+							font-size: 2.875rem;
+							font-size: clamp(2.013rem, 1.396rem + 1.643vw, 2.875rem);
+						}
+					}
+				}
+				.accordion-content {
+					background: transparent;
+					padding: 0;
+					border: 0;
+					.button {
+						transform: translateY(.6em);
+					}
+				}
+				.number {
+					font-size: 4.156rem;
+					font-size: clamp(4.156rem, 2.884rem + 3.393vw, 5.938rem);
+					@include breakpoint(medium) {
+						font-size: 5.938rem;
+						font-size: clamp(4.156rem, 2.884rem + 3.393vw, 5.938rem);
+					}
+					svg {
+						position: absolute;
+						top: calc(100% + 4px);
+						left: 50%;
+						transform: rotateX(0deg) translateX(-50%);
+						transform-origin: center;
+						max-width: 2.063rem;
+						max-width: clamp(2.063rem, 1.699rem + 0.97vw, 2.572rem);
+						@include breakpoint(medium) {
+							max-width: 2.572rem;
+							max-width: clamp(2.063rem, 1.699rem + 0.97vw, 2.572rem);
+						}
+						
+						path {
+							transition: .25s ease;
+						}
+					}
+				}
+				&.is-active {
+					.accordion-title .number svg {
+						transform: rotateX(180deg) translateX(-50%);
+						path {
+							fill: $black;
+						}
+					}
+				}
+			}
+		}
+	}
+	.contact-form {
+		padding-top: rem-calc(95);
+		padding-bottom: rem-calc(55);
+		svg.arrow-down {
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+}

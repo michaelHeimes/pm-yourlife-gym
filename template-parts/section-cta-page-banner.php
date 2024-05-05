@@ -1,26 +1,19 @@
 <?php 
-$page_banner = get_field('page_banner') ?? null;
+$page_banner = get_field('cta_page_banner') ?? null;
 
 // Sliders
 $slider_transition_delay = $page_banner['slider_transition_delay'] ?? null;
 $slides = $page_banner['slides'] ?? null;
+$centered_heading = $page_banner['centered_heading'] ?? null;
+$centered_text = $page_banner['centered_text'] ?? null;
 
 ?>
-<header class="entry-header page-banner has-bg grid-x align-middle style-banner-slider">
+<header class="entry-header page-banner has-bg grid-x align-middle style-banner-slider cta-page-banner">
 	<?php if( !empty( $slides ) ):?>
 		<div class="bg bg-slider" data-delay="<?= esc_attr( $slider_transition_delay );?>">
 			<div class="swiper-wrapper">
 				<?php $i = 1; foreach($slides as $slide):
 					$type = $slide['media_type'];
-					$text_banner = $slide['text_banner'] ?? null;	
-					$video_modal_url = $slide['video_modal_url'] ?? null;
-					if( $video_modal_url ) {
-						$video_title = '';
-						
-						if (preg_match('/title="([^"]+)"/', $video_modal_url, $matches)) {
-							$video_title = $matches[1] ?? null;
-						}
-					}
 				?>
 					<div class="swiper-slide">
 						<?php if( $type == 'image' && !empty( $slide['image'] ) ) {
@@ -39,13 +32,8 @@ $slides = $page_banner['slides'] ?? null;
 							</div>
 						<?php endif;?>
 
-						<div class="grid-container content">
+						<div class="grid-container">
 							<div class="grid-x grid-padding-x align-justify flex-dir-column tablet-flex-dir-row-reverse">
-								<?php if( !empty($text_banner) ):?>
-									<div class="cell small-12 medium-6 position-relative">
-										<h2 class="h3 color-white uppercase"><?=esc_html($text_banner);?></h2>
-									</div>
-								<?php endif;?>
 								<?php if( !empty( $video_modal_url ) ):?>
 									<div class="cell small-12 medium-6 position-relative">
 										<button class="button no-style position-relative" data-open="<?=sanitize_title($video_title) . '-video-modal-' . $i;?>">
@@ -55,7 +43,7 @@ $slides = $page_banner['slides'] ?? null;
 											<div class="text-right">
 												<button class="close-button no-style" data-close aria-label="Close modal" type="button">
 													<span aria-hidden="true">&times;</span>
-											 	</button>
+												 </button>
 											</div>	
 											<?php
 												// Load value.
@@ -94,17 +82,22 @@ $slides = $page_banner['slides'] ?? null;
 					</div>
 				<?php $i++; endforeach;?>
 			</div>
-			<?php if( !empty( $slides ) && count($slides) > 1 ):?>
-				<div class="grid-container pagination-container">
-					<div class="grid-x grid-padding-x align-center">
-						<div class="cell small-12">
-							<div class="position-relative">
-								<div class="swiper-pagination"></div>
-							</div>
-						</div>
+		</div>
+	<?php endif;?>
+	<?php if( !empty($centered_heading) || !empty($centered_heading) ):?>
+		<div class="grid-container relative content">
+			<div class="grid-x grid-padding-x align-center">
+				<div class="cell small-12 medium-10 tablet-8 large-6">
+					<div class="text-center">
+						<?php if( !empty($centered_heading) ):?>
+							<h1 class="color-white"><?=$centered_heading;?></h1>
+						<?php endif;?>
+						<?php if( !empty($centered_text) ):?>
+							<div class="text-wrap color-white"><?=$centered_text;?></div>
+						<?php endif;?>
 					</div>
 				</div>
-			<?php endif;?>
+			</div>
 		</div>
 	<?php endif;?>
 </header>

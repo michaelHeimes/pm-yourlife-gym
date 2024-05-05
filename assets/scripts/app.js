@@ -87,6 +87,7 @@
 	'use strict';
     
     var _app = window._app || {};
+    gsap.registerPlugin(ScrollTrigger);
     
     _app.foundation_init = function() {
         $(document).foundation();
@@ -159,6 +160,20 @@
     
     _app.home_page_anchors = function() {
         if( document.body.classList.contains('home') ) {
+            
+            // if (document.querySelector('#anchor-nav')) {
+            //     // Define the ScrollTrigger for sticking #anchor-nav
+            //     ScrollTrigger.create({
+            //         trigger: '.content', // Trigger element
+            //         start: 'top bottom-=100', // When the top of .content is 100px above the bottom of the viewport
+            //         endTrigger: '.content', // End trigger element
+            //         end: 'bottom bottom', // When the bottom of .content enters the bottom of the viewport
+            //         pin: '#anchor-nav', // Element to pin
+            //         pinSpacing: false, // Maintain pin spacing
+            //         markers: true // Show ScrollTrigger markers (for debugging)
+            //     });
+            // }
+            
             // Listen for the update event on Magellan
             const anchorNav =  $('#anchor-nav');
             
@@ -430,7 +445,7 @@
         // Standard Functions
         _app.foundation_init();
         _app.emptyParentLinks();
-        _app.fixed_nav_hack();
+        //_app.fixed_nav_hack();
         _app.display_on_load();
         
         // Custom Functions

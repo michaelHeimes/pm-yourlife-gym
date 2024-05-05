@@ -17,7 +17,7 @@ $mediumGutter: map-get($grid-margin-gutters, "medium");
 
 // Global styles
 @include foundation-global-styles;
-@include foundation-forms;
+// @include foundation-forms;
 @include foundation-typography;
 
 // Grids (choose one)
@@ -58,7 +58,7 @@ $mediumGutter: map-get($grid-margin-gutters, "medium");
 @include foundation-dropdown-menu;
 
 // Layout components
-@include foundation-off-canvas;
+// @include foundation-off-canvas;
 @include foundation-reveal;
 @include foundation-sticky;
 //@include foundation-title-bar;
@@ -84,6 +84,7 @@ $mediumGutter: map-get($grid-margin-gutters, "medium");
 @import "typography";
 @import "header";
 @import "footer";
+@import "forms";
 
 @import "_parts/page-banner";
 @import "_parts/copy-ctas-image";
@@ -93,3 +94,4 @@ $mediumGutter: map-get($grid-margin-gutters, "medium");
 // @import "_modules/page-modules";
 
 @import "_pages/home";
+@import "_pages/cta_page";

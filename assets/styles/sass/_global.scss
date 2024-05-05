@@ -49,9 +49,24 @@ svg {
 	}
 }
 
+.has-brick-repeating-bg {
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 47px;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-image: url(../images/brick-repeating-bg.png);
+		background-size: 100vw;
+	}
+}
+
 button,
 .button {
 	cursor: pointer;
+	text-transform: uppercase;
 	&.no-style {
 		background: transparent;
 		padding: 0;
@@ -90,7 +105,24 @@ button,
 			}
 		}
 	}
+	&.large {
+		padding: .8637em .7934em;
+	}
+}
 
+.accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle) {
+	> a {
+		&:after {
+			border: 0;
+			width: 15px;
+			height: 24.29px;
+			background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24.292' height='15'%3E%3Cpath d='M0 2.854 2.855 0l9.292 9.271L21.438 0l2.854 2.854L12.146 15Z' fill='%23c4a75f'/%3E%3C/svg%3E");
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+			margin-top: -12px;
+		}
+	}
 }
 
 .anchor-nav,

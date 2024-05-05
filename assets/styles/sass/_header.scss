@@ -1,7 +1,17 @@
 header.site-header {
 	background-color: #333333;
+	background-image: linear-gradient(180deg, #333 0%, #010101 100%);
 	z-index: 5555;
-	
+	max-width: 100% !important;
+	padding-top: 12.53px;
+	padding-bottom: 12.53px;
+	.top-bar {
+		li.logo {
+			@include breakpoint(medium down) {
+				max-width: 263px;
+			}
+		}
+	}
 	.utility-nav {
 		position: absolute;
 		top: 100%;
@@ -62,6 +72,33 @@ header.site-header {
 				a {
 					padding-right: 3.05rem;
 				}
+			}
+			&:not(:first-child):not(:only-child):not(:last-child) {
+				a {
+					position: relative;
+					&:before {
+						content: '';
+						display: block;
+						position: absolute;
+						z-index: -1;
+						top: 0;
+						bottom: 0;
+						left: -1px;
+						right: -1px;
+						width: calc(100% + 2px);
+						background-color: $color-gold;
+					}
+				}
+			}
+			&.phone {
+				@media (min-width: 430px) {
+					span.show-for-medium {
+						display: block !important;
+					}
+					svg {
+						margin-right: rem-calc(7);	
+					}
+				}	
 			}
 			& + .get-started {
 				a {
@@ -159,19 +196,20 @@ header.site-header {
 		    width: auto;
 		    flex: 0 0 auto;
 		    
-		    a#menu-toggle {
+		    a.menu-toggle {
+				cursor: pointer;
 			    padding: 0;
 			    width: 36px;
 			    height: 36px;
 			    position: relative;
-			    
 			    span {
 				    position: absolute;
-				    left: 0;
+				    left: 4px;
 				    right: 0;
-				    width: 36px;
+				    width: 28px;
 				    height: 4px;
-				    background-color: $white;
+				    background-color: $color-gold;
+					box-shadow: 1px 1px 0px 0px rgba(0,0,0,1);
 					transition: all .3s ease;
 				    
 				    &:nth-child(1) {
@@ -190,6 +228,7 @@ header.site-header {
 				
 			&.clicked {
 				span {
+					background-color: $color-gold;
 					&:nth-child(1) {
 						top: 4px;
 						transform: translate(0px, 12px) rotate(-45deg);
@@ -215,4 +254,113 @@ header.site-header {
 	
 	}
 	
+}
+
+.off-canvas-wrapper {
+
+	.off-canvas {
+		position: fixed;
+		z-index: 5555;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: #181818;
+		overflow: auto;
+		visibility: hidden;
+		opacity: 0;
+		transition: visibility 0s linear .4s, opacity .4s ease 0s;
+		&.is-open {
+			visibility: visible;
+			opacity: 1;
+			transition: visibility 0s linear 0s, opacity .4s ease .01s;
+		}
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			width: 100%;
+			max-width: 500px;
+			margin: auto;
+			background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='479.999' height='398.864'%3E%3Cg data-name='logo bug' opacity='.452'%3E%3Cpath data-name='Union 1' d='M203.429 398.864V184.39l19.024 10.957L0 0h111.048L240 113.431 368.951 0H480L257.545 195.347l19.024-10.957v214.474Zm98.685-142.91 110.411-97.614-45.7 26.438v-51.337l60.686-53.264.145 145.834-125.537 110.736ZM52.341 226.012l.145-145.834 60.687 53.265v51.335l-45.7-26.437 110.411 97.613v80.793Z'/%3E%3C/g%3E%3C/svg%3E");
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: 50% 100%;
+		}
+		.inner {
+			position: relative;
+			z-index: 1;
+			min-height: 100%;
+			padding-bottom: 102px;
+			max-width: 500px;
+			margin: auto;
+			.close-menu {
+				padding-top: 21px;
+				padding-bottom: 43px;
+				width: 100%;
+				font-size: rem-calc(20);
+				b {
+					color: #8B8B8B;
+				}
+			}
+		}
+		ul#offcanvas-nav {
+			padding-bottom: 32px;
+		}
+		.accordion-menu {
+			li {
+				a {
+					text-transform: uppercase;
+					font-family: $font-header;
+					font-weight: 700;
+					padding: .92rem 1rem;
+				}
+				&.current-menu-item {
+					a {
+						color: $white;
+					}
+				}
+			}
+			> li {
+				a {
+					color: $color-gold;
+					font-size: rem-calc(28);
+				}
+				&.is-accordion-submenu-parent:not(.has-submenu-toggle) {
+					a:after {
+						border: 0;
+						height: 15px;
+						width: 24.29px;
+						background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24.292' height='15'%3E%3Cpath d='M0 2.854 2.855 0l9.292 9.271L21.438 0l2.854 2.854L12.146 15Z' fill='%23c4a75f'/%3E%3C/svg%3E");
+						background-size: contain;
+						background-position: center;
+						background-repeat: no-repeat;
+						margin-top: -7px;
+						transition: color .25s ease, transform .3s ease;
+					}
+					&[aria-expanded="true"] {
+						a {
+							color: $white;
+							&:after {
+								transform: rotateX(180deg);
+								background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24.292' height='15'%3E%3Cpath d='M0 2.854 2.855 0l9.292 9.271L21.438 0l2.854 2.854L12.146 15Z' fill='%23ffffff'/%3E%3C/svg%3E");
+							}
+						}
+					}
+					.submenu {
+						li {
+							a {
+								font-size: rem-calc(20);
+								color: #8B8B8B;
+								padding-left: 39px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }

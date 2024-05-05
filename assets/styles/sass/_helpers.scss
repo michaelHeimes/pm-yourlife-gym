@@ -15,6 +15,11 @@
 
 .color-white {
 	color: $white;
+	p,
+	ul,
+	ol {
+		color: $white;
+	}
 }
 
 .color-light-gray {

@@ -78,6 +78,24 @@
 		.pagination-container {
 			max-width: rem-calc(1200);
 		}
+		&.cta-page-banner {
+			h1 {
+				text-shadow: 0px 0px 8px rgba(0,0,0,1);
+				line-height: 1.0555;
+				font-size: 3.15rem;
+				font-size: clamp(3.15rem, 2.186rem + 2.571vw, 4.5rem);
+				@include breakpoint(medium) {
+					font-size: 4.5rem;
+					font-size: clamp(3.15rem, 2.186rem + 2.571vw, 4.5rem);
+				}
+			}
+			p,
+			ul,
+			ol {
+				text-shadow: 0px 3px 6px rgba(0,0,0,1);
+				@extend .font-20;
+			}
+		}
 	}
 
 	.bg-slider {
@@ -108,24 +126,26 @@
 	.content {
 		z-index: 1;
 		width: 100%;
-		padding-top: 3rem;
-		padding-bottom: 3rem;
+		padding-top: 5rem;
+		padding-bottom: 5rem;
 		.grid-container {
 			flex-wrap: nowrap;
 		}
 		.title-wrap {
 			flex: 1;
 			h1 {
-				text-shadow: 0px 3px 9px rgba(0,0,0,0.75);
+				text-shadow: 0px 0px 8px rgba(0,0,0,1);
 			}
 		}
 	}
 	&.style-hero-slider {
 		h1 {
+			text-shadow: 0px 0px 8px rgba(0,0,0,1);
 			line-height: .97959;
 			margin-bottom: .205em;
 			font-size: 4.287rem;
 			font-size: clamp(4.287rem, 3.394rem + 3.973vw, 6.125rem);
+			
 			@include breakpoint(medium) {
 				font-size: 6.125rem;
 				font-size: clamp(4.287rem, 3.394rem + 3.973vw, 6.125rem);
@@ -137,82 +157,5 @@
 				margin-right: rem-calc(20);
 			}
 		}
-	}
-	
-	
-	
-	
-	&.size-hero,
-	&.size-hero .grid-container {
-		height: 100vh;
-		max-height: 1031px;
-		
-		.swiper-pagination.swiper-pagination-bullets {
-			text-align: left;
-			bottom: 32px;
-			@include breakpoint(medium) {
-				bottom: 77px;
-			}
-		}
-		
-		.content {
-			.title-wrap {
-				flex: 1;
-				padding-top: rem-calc(80);
-				padding-bottom: rem-calc(150);
-			}
-			h1 {
-				font-size: rem-calc(37.8);
-				@include breakpoint(tablet) {
-					font-size: rem-calc(54);	
-				}
-				span {
-					font-size: rem-calc(49);
-					@include breakpoint(tablet) {
-						font-size: rem-calc(70);
-					}
-				}
-			}
-		}
-		
-	}
-	
-	&.size-banner,
-	&.size-banner .grid-container {
-		min-height: 610px;
-		
-		.page-banner .bg-slider .swiper-pagination.swiper-pagination-bullets {
-			bottom: 20px;	
-		}
-		
-		.content {
-			.title-wrap {
-				flex: 1;
-				padding-top: rem-calc(18);
-				padding-bottom: rem-calc(32);
-			}
-			h1 {
-				font-size: rem-calc(48);
-				line-height: 1.395;
-				@include breakpoint(tablet) {
-					font-size: rem-calc(54);	
-				}
-				span {
-					font-size: rem-calc(54);
-					@include breakpoint(tablet) {
-						font-size: rem-calc(70);
-					}
-				}
-			}
-		}
-		
-	}
-	
-}
-
-.page-template-default {
-	.page-banner {
-		margin-left: calc((100vw - #{$global-width}) / -2 - ($mediumGutter * .5));
-		margin-right: calc((100vw - #{$global-width}) / -2 - ($mediumGutter * .5) );
 	}
 }

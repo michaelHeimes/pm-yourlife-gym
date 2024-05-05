@@ -64,7 +64,7 @@ $image = $copy_ctas_image['image'] ?? null;
 								</div>
 							<?php endif; ?>
 							<?php 
-							$link =$button_link_2;
+							$link = $button_link_2;
 							if( $link ): 
 								$link_url = $link['url'];
 								$link_title = $link['title'];

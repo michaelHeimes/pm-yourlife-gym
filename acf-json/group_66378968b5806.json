@@ -1,10 +1,10 @@
 {
-    "key": "group_662d00a31f979",
-    "title": "Home Page",
+    "key": "group_66378968b5806",
+    "title": "CTA Page",
     "fields": [
         {
-            "key": "field_662d097afadcd",
-            "label": "Home Hero",
+            "key": "field_6637896940d2b",
+            "label": "Page Banner",
             "name": "",
             "aria-label": "",
             "type": "accordion",
@@ -21,9 +21,9 @@
             "endpoint": 0
         },
         {
-            "key": "field_662d0986fadce",
-            "label": "Home Hero",
-            "name": "clone-home_hero",
+            "key": "field_6637897a40d2c",
+            "label": "Page Banner",
+            "name": "page_banner",
             "aria-label": "",
             "type": "clone",
             "instructions": "",
@@ -35,7 +35,7 @@
                 "id": ""
             },
             "clone": [
-                "field_6632d950790c1"
+                "field_6632e466cb02c"
             ],
             "display": "seamless",
             "layout": "block",
@@ -43,8 +43,8 @@
             "prefix_name": 0
         },
         {
-            "key": "field_662d915a569c5",
-            "label": "Copy, CTAs, Image",
+            "key": "field_66378adc69329",
+            "label": "Steps Accordion",
             "name": "",
             "aria-label": "",
             "type": "accordion",
@@ -61,9 +61,9 @@
             "endpoint": 0
         },
         {
-            "key": "field_662d9169569c6",
-            "label": "Copy, CTAs, Image",
-            "name": "flex-copy_ctas_image",
+            "key": "field_66378af86932a",
+            "label": "Steps Accordion",
+            "name": "steps_accordion",
             "aria-label": "",
             "type": "clone",
             "instructions": "",
@@ -75,7 +75,7 @@
                 "id": ""
             },
             "clone": [
-                "field_662d905d6a195"
+                "field_6637899caeb41"
             ],
             "display": "seamless",
             "layout": "block",
@@ -83,8 +83,8 @@
             "prefix_name": 0
         },
         {
-            "key": "field_662ec2f138cda",
-            "label": "Parallax Rows",
+            "key": "field_6637c327b22f9",
+            "label": "Contact Form",
             "name": "",
             "aria-label": "",
             "type": "accordion",
@@ -101,11 +101,11 @@
             "endpoint": 0
         },
         {
-            "key": "field_662ec2fb38cdb",
-            "label": "Parallax Rows",
-            "name": "parallax_rows",
+            "key": "field_6637c699500d7",
+            "label": "Background Image",
+            "name": "contact_background_image",
             "aria-label": "",
-            "type": "clone",
+            "type": "image",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -114,13 +114,42 @@
                 "class": "",
                 "id": ""
             },
-            "clone": [
-                "field_662da58ce4dc3"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 0
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_6637c337b22fa",
+            "label": "Contact Form",
+            "name": "gravity_form",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "None",
+                "1": "Contact Form"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
         }
     ],
     "location": [
@@ -128,7 +157,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-templates\/page-home.php"
+                "value": "page-templates\/page-cta.php"
             }
         ]
     ],
@@ -141,5 +170,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1714609706
+    "modified": 1714931379
 }

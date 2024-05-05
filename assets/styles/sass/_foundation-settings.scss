@@ -297,7 +297,7 @@ $breadcrumbs-item-separator-color: $medium-gray;
 
 $button-font-family: $font-header;
 $button-font-weight: 700;
-$button-padding: 0.85em 1em;
+$button-padding: 1.1502em .9412em;
 $button-margin: 0 0 0 0;
 $button-fill: solid;
 $button-background: $primary-color;
@@ -434,7 +434,7 @@ $flexbox-responsive-breakpoints: true;
 // 20. Forms
 // ---------
 
-$fieldset-border: 1px solid $medium-gray;
+$fieldset-border: 3px solid $color-gold;
 $fieldset-padding: rem-calc(20);
 $fieldset-margin: rem-calc(18 0);
 $legend-padding: rem-calc(0 3);
@@ -873,7 +873,7 @@ $tooltip-radius: $global-radius;
 // 55. Top Bar
 // -----------
 
-$topbar-padding: 0.5rem;
+$topbar-padding: 0;
 $topbar-background: transparent;
 $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: 0.5rem 1rem 0.5rem 0;
