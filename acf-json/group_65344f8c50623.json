@@ -80,7 +80,7 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "table",
+            "layout": "block",
             "pagination": 0,
             "min": 0,
             "max": 0,
@@ -88,6 +88,32 @@
             "button_label": "Add Link",
             "rows_per_page": 20,
             "sub_fields": [
+                {
+                    "key": "field_663973c44cb19",
+                    "label": "Style",
+                    "name": "style",
+                    "aria-label": "",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "transparent": "Transparent Background",
+                        "gold": "Gold Background"
+                    },
+                    "default_value": "",
+                    "return_format": "value",
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "layout": "vertical",
+                    "save_other_choice": 0,
+                    "parent_repeater": "field_65344f8cbc85d"
+                },
                 {
                     "key": "field_65344fb6bc85e",
                     "label": "Link",
@@ -113,7 +139,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "all"
+                "value": "acf\/button-group"
             }
         ]
     ],
@@ -126,5 +152,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1714516960
+    "modified": 1715086193
 }

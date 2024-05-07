@@ -50,17 +50,58 @@ body {
 		input[type=week], 
 		select, 
 		textarea {
+			color: $white;
 			background-color: $black;
 			border: 3px solid $color-gold;
 			&:not(textarea):not(select) {
 				height: rem-calc(60);
 			}
 		}
-		input[type=text] {
-		}
 	}
 	.gform_footer, 
 	.gform_page_footer {
 		margin: 28px 0 0;
+	}
+	.entry-content {
+		.gform_wrapper.gravity-theme {
+			.gform_fields {
+				grid-row-gap: 34px;
+			}
+			.gfield_label,
+			.ginput_complex label {
+				padding-top: 0;
+				color: $black;
+			}
+			input[type=email], 
+			input[type=month], 
+			input[type=number], 
+			input[type=password], 
+			input[type=search], 
+			input[type=tel], 
+			input[type=text], 
+			input[type=time], 
+			input[type=url], 
+			input[type=week], 
+			select, 
+			textarea {
+				color: $black;
+				background-color: $white;
+				border: 1px solid $black;
+				&:not(textarea):not(select) {
+					height: rem-calc(60);
+				}
+			}
+			@media (max-width: 640px) {
+				.ginput_complex span:not(:last-of-type) {
+					margin-bottom: rem-calc(34);
+				}
+			}
+			@media (min-width: 641px) {
+				.ginput_container_address span,
+				.ginput_full:not(:last-of-type) {
+					margin-bottom: rem-calc(34);
+				}
+			}
+		}
 	}
 }

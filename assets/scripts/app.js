@@ -249,6 +249,34 @@
 // 
 //         }
     }
+    
+    _app.block_testimonial_slider = function() {
+        const sliderwrappers = document.querySelectorAll('.block.testimonial-slider')
+
+        sliderwrappers.forEach(function (sliderwrapper) {
+            const slider = sliderwrapper.querySelector('.t-slider');
+            const delay = sliderwrapper.getAttribute('data-delay');
+            
+            const swiper = new Swiper(slider, {
+                loop: true,
+                slidesPerView: 1,
+                speed: 500,
+                spaceBetween: 0,
+                effect: "fade",
+                crossFade: true,
+                fadeEffect: { crossFade: true },
+                autoplay: {
+                  delay: delay + '000',
+                  disableOnInteraction: false,
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+            });
+
+        });
+    }
         
     _app.banner_slider = function() {
         const bannerSlider = document.querySelector('.page-banner .bg-slider');
@@ -365,50 +393,47 @@
     _app.parallaxRows = function() {
         const offsetCtas = document.querySelectorAll('.offset-cta');
         
-        offsetCtas.forEach(offsetCta => {
-            const imgWrap = offsetCta.querySelector('.img-wrap .inner');
-            const ctaCard = offsetCta.querySelector('.cta-card');
-            
-            gsap.set(imgWrap, {y:'35%'})
+        const parallaxAnimation = function() {
+            offsetCtas.forEach(offsetCta => {
+                const imgWrap = offsetCta.querySelector('.img-wrap .inner');
+                const ctaCard = offsetCta.querySelector('.cta-card');
+                
+                gsap.set(imgWrap, {y:'35%'})
+    
+                gsap.to(imgWrap, {
+                  yPercent: -65,
+                  ease: "none",
+                  scrollTrigger: {
+                    trigger: offsetCta,
+                    start: "top bottom", // the default values
+                    end: "bottom top",
+                    scrub: true
+                  }, 
+                });
+                
+                gsap.to(ctaCard, {
+                  yPercent: -45,
+                  ease: "none",
+                  scrollTrigger: {
+                    trigger: offsetCta,
+                    start: "top bottom", // the default values
+                    end: "bottom top",
+                    scrub: true
+                  }, 
+                });
 
-            gsap.to(imgWrap, {
-              yPercent: -65,
-              ease: "none",
-              scrollTrigger: {
-                trigger: offsetCta,
-                start: "top bottom", // the default values
-                end: "bottom top",
-                scrub: true
-              }, 
-            });
-            
-            gsap.to(ctaCard, {
-              yPercent: -45,
-              ease: "none",
-              scrollTrigger: {
-                trigger: offsetCta,
-                start: "top bottom", // the default values
-                end: "bottom top",
-                scrub: true
-              }, 
-            });
+            });        
+        }
         
-            // gsap.to([imgWrap, ctaCard], {
-            //     y: () => {
-            //         const bounds = offsetCta.getBoundingClientRect();
-            //         const offset = bounds.top - window.innerHeight;
-            //         const yOffset = Math.max(0, Math.min(100, offset)) - 100;
-            //         return `-${yOffset}px`;
-            //     },
-            //     ease: "power1.out",
-            //     scrollTrigger: {
-            //         trigger: offsetCta,
-            //         start: "top bottom",
-            //         end: "bottom bottom",
-            //         scrub: true
-            //     }
-            // });
+        if( offsetCtas && window.innerWidth > 639 ) { 
+            parallaxAnimation();
+        }
+        window.addEventListener("resize", function(){
+            if( offsetCtas && window.innerWidth > 639 ) { 
+                parallaxAnimation();
+            }
         });
+        
     }
     
     _app.footer_nav_cols = function() {
@@ -439,6 +464,13 @@
         // Recalculate .main-nav height on window resize
         window.addEventListener('resize', setMainNavHeight);
     }
+    
+    _app.accordions = function() {
+          $(".accordion").on("down.zf.accordion", function(event) {
+             var $openDrawer = $(this).find('.is-active');
+             $('html,body').animate({scrollTop: $($openDrawer).offset().top - 120}, 500);
+          }); 
+       } 
             
     _app.init = function() {
         
@@ -455,6 +487,8 @@
         _app.autoPlayLoopedVideos();
         _app.video_lazyload();
         _app.parallaxRows();
+        _app.accordions();
+        _app.block_testimonial_slider();
         //_app.footer_nav_cols();
     }
     

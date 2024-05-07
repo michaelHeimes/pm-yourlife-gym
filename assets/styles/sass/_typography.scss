@@ -15,12 +15,32 @@ ol {
 	}
 }
 
+a {
+	cursor: pointer;
+	transition: color .25s ease;
+}
+
 .entry-content {
-	a {
+	a:not(.chev-link):not(.accordion-title) {
 		color: #048B12;
 		text-decoration: underline;
 		&:hover {
 			color: $color-gold;
+		}
+	}
+	ul,
+	ol {
+		&:not(.accordion):not(.tabs):not(.menu):not(.tax-menu):not(.terms-list) {
+			padding-left: 2.5rem;
+			margin-bottom: 2.5rem;
+			@include breakpoint(tablet) {
+				margin-bottom: 3rem;
+			}
+		}
+		&:not(.tabs):not(.accordion) {
+		}
+		li:not(.accordion-item):not(.tabs-title):not(.menu-item) {
+			margin-bottom: 0.75rem;
 		}
 	}
 }
@@ -40,6 +60,26 @@ h6,
 	text-transform: uppercase;
 }
 
+h1,
+.h1 {
+	font-size: 2.275rem;
+	font-size: clamp(2.275rem, 1.95rem + 1.444vw, 3.25rem);
+	@include breakpoint(medium) {
+		font-size: 3.25rem;
+		font-size: clamp(2.275rem, 1.95rem + 1.444vw, 3.25rem);
+	}
+}
+
+h2,
+.h2 {
+	font-size: 2.013rem;
+	font-size: clamp(2.013rem, 1.725rem + 1.278vw, 2.875rem);
+	@include breakpoint(medium) {
+		font-size: 2.875rem;
+		font-size: clamp(2.013rem, 1.725rem + 1.278vw, 2.875rem);
+	}
+}
+
 h3,
 .h3 {
 	font-size: 1.75rem;
@@ -47,5 +87,15 @@ h3,
 	@include breakpoint(medium) {
 		font-size: 2.5rem;
 		font-size: clamp(1.75rem, 1.472rem + 1.235vw, 2.5rem);
+	}
+}
+
+h4,
+.h4 {
+	font-size: 1.4rem;
+	font-size: clamp(1.4rem, 1.2rem + 0.889vw, 2rem);
+	@include breakpoint(medium) {
+		font-size: 2rem;
+		font-size: clamp(1.4rem, 1.2rem + 0.889vw, 2rem);
 	}
 }

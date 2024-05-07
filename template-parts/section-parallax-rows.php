@@ -55,7 +55,7 @@ $rows = $parallax_rows['parallax_rows']['rows'] ?? null;
 						$imgID = $cta_card_offset_image['ID'];
 						$img_alt = trim( strip_tags( get_post_meta( $imgID, '_wp_attachment_image_alt', true ) ) );
 						$img = wp_get_attachment_image( $imgID, 'full', false, [ "class" => "", "alt"=>$img_alt] );
-						echo '<div class="img-wrap cell small-12 tablet-6">';
+						echo '<div class="img-wrap cell small-12 tablet-6 show-for-medium">';
 						echo '<div class="inner">';
 						echo $img;
 						echo '</div>';

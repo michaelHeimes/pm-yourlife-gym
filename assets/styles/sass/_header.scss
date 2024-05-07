@@ -133,15 +133,19 @@ header.site-header {
 			
 		.main-nav {
 			align-items: center;
-			>li {
-				margin: 0 .3rem 0rem;
-				
-				> a {
+			li {
+				a {
 					font-family: $font-header;
 					font-weight: 700;
 					font-size: rem-calc(20);
 					text-transform: uppercase;
-					padding: 1.78rem 0.5rem 1.78rem;
+				}
+			}
+			>li {
+				margin: 0;
+				
+				> a {
+					padding: 1.1rem 1.35rem .7rem;
 					
 					@include breakpoint(tablet) {
 						font-size: rem-calc(20);
@@ -164,10 +168,10 @@ header.site-header {
 					
 				}
 				
-			&.is-active,
-			&.current-menu-ancestor {
-				span:before {
-					background-color: $white;
+			&.is-active {
+				a {
+					background-color: #8B8B8B;
+					color: #101010;
 				}
 			}
 				
@@ -175,11 +179,27 @@ header.site-header {
 				
 				ul.submenu {
 					li {
+						&:first-child {
+							a {
+								padding-top: 2.2rem;
+							}
+						}
+						&:last-child {
+							a {
+								padding-bottom: 2rem;
+							}
+						}
+						&:only-child {
+							a {
+								padding-top: 2.2rem;
+								padding-bottom: 2rem;
+							}
+						}
 						a {
-
-							
+							padding: 1rem 1.35rem;
 						&:hover {
-
+							background-color: $black;
+							color: $color-gold;
 						}
 							
 						}

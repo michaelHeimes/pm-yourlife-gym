@@ -1,6 +1,9 @@
 .copy-ctas-image {
 	padding-top: rem-calc(78.4);
 	padding-bottom: rem-calc(95.2);
+	&:before {
+		top: 122px;
+	}
 	@include breakpoint(medium) {
 		padding-top: rem-calc(112);
 		padding-bottom: rem-calc(136);
@@ -19,21 +22,22 @@
 			padding-top: rem-calc(42);
 		}
 	}
-	h2 {
+	.h2,
+	.h3 {
 		line-height: .87;
 		margin: 0;
-		font-size: 2.931rem;
-		font-size: clamp(2.931rem, 2.466rem + 2.068vw, 4.188rem);
+		font-size: 3rem;
+		font-size: clamp(3rem, 2.604rem + 1.759vw, 4.188rem);
 		@include breakpoint(medium) {
+			display: block;
 			font-size: 4.188rem;
-			font-size: clamp(2.931rem, 2.466rem + 2.068vw, 4.188rem);
+			font-size: clamp(3rem, 2.604rem + 1.759vw, 4.188rem);
 		}
 	}
-	h3 {
-		line-height: .92;
-		font-size: 2.188rem;
-		font-size: clamp(2.188rem, 1.84rem + 1.543vw, 3.125rem);
+	.h3 {
 		@include breakpoint(medium) {
+			text-transform: none;
+			line-height: .92;
 			font-size: 3.125rem;
 			font-size: clamp(2.188rem, 1.84rem + 1.543vw, 3.125rem);
 		}

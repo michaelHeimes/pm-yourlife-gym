@@ -13,10 +13,10 @@ $page_banner = get_field('page_banner') ?? null;
 	<?php if( !empty( $page_banner  ) ) {
                 get_template_part('template-parts/section', 'page-banner');
         }?>
-	<div class="entry-content">
+	<div class="entry-content has-brick-repeating-bg position-relative">
         <div class="grid-container">
             <div class="grid-x grid-padding-x align-center">
-                <div class="cell small-12 tablet-10">
+                <div class="inner cell small-12 tablet-10 position-relative">
 		            <?php the_content();?>
                 </div>
             </div>

@@ -8,6 +8,12 @@ footer#colophon {
 	background-size: 353px;
 	background-repeat: no-repeat;
 	background-position: 0% 0%;
+	ul#social-links {
+		@include breakpoint(small down) {
+			justify-content: center;
+			padding-top: rem-calc(69);
+		}
+	}
 	.accent-wrap {
 		position: absolute;
 		z-index: 0;
@@ -60,16 +66,20 @@ footer#colophon {
 		}	
 	}
 	.contact-menu-wrap {
-		padding-bottom: 6.8rem;
+		padding-bottom: .2rem;
 	}
 	.footer-nav {
 		display: block;
-		columns: 2;
+		columns: 1;
 		// display: flex;
 		// flex-direction: column;
 		// flex-wrap: wrap;
 		margin-left: calc(-1 * #{$smallGutter} * 0.5);
 		margin-right: calc(-1 * #{$smallGutter} * 0.5);
+		@include breakpoint(small down) {
+			max-width: 360px;
+			margin: auto;
+		}
 		@include breakpoint(medium) {
 			columns: 3;
 			margin-left: calc(-1 * #{mediumGutter} * 0.5);
@@ -111,7 +121,12 @@ footer#colophon {
 			}
 		}
 	}
-	
+	.contact-info {
+		@include breakpoint(small down) {
+			max-width: 360px;
+			margin: auto;
+		}
+	}
 	.site-info {
 		background-color: $black;
 		font-size: rem-calc(16);

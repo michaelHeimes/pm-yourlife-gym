@@ -15,6 +15,7 @@ $street_address = get_field('street_address', 'option') ?? null;
 $city_state_zip_code = get_field('city_state_zip_code', 'option') ?? null;
 $directions_url = get_field('directions_url', 'option') ?? null;
 $hours = get_field('hours', 'option') ?? null;
+$subfooter_links = get_field('subfooter_links', 'option') ?? null;
 ?>
 				<footer id="colophon" class="site-footer position-relative">
 					<div class="accent-wrap"></div>
@@ -36,10 +37,7 @@ $hours = get_field('hours', 'option') ?? null;
 								}
 							?>
 						</div>
-						<div class="contact-menu-wrap grid-x grid-padding-x tablet-flex-dir-row-reverse">
-							<div class="footer-col nav-menu cell small-12 tablet-auto">
-								<?php trailhead_footer_menu();?>
-							</div>
+						<div class="contact-menu-wrap grid-x grid-padding-x">
 							<?php if( !empty($phone_number) || !empty($street_address) || !empty($city_state_zip_code) || !empty($directions_url) || !empty($hours) ):?>
 								<div class="footer-col contact-info cell small-12 tablet-shrink">
 									<?php if( !empty($phone_number) ):?>
@@ -73,6 +71,9 @@ $hours = get_field('hours', 'option') ?? null;
 									<?php endif;?>
 								</div>
 							<?php endif;?>
+							<div class="footer-col nav-menu cell small-12 tablet-auto">
+								<?php trailhead_footer_menu();?>
+							</div>
 						</div>
 					</div>
 					<div class="site-info">
@@ -94,6 +95,21 @@ $hours = get_field('hours', 'option') ?? null;
 											?>
 											<a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
 										<?php endif; ?>
+										<?php if( !empty($subfooter_links) ):
+											foreach($subfooter_links as $subfooter_link):	
+											$link = $subfooter_link['link'] ?? null;
+												if( $link ): 
+										?>
+											<span>
+												<span>|</span>
+												<?php 
+													$link_url = $link['url'];
+													$link_title = $link['title'];
+													$link_target = $link['target'] ? $link['target'] : '_self';
+													?>
+													<a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+											</span>
+										<?php endif; endforeach; endif;?>
 									</p>
 								</div>
 								<div class="cell small-12 tablet-shrink">

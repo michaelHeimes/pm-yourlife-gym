@@ -19,8 +19,8 @@ $button_link_1 = $copy_ctas_image['button_link_1'] ?? null;
 $button_link_2 = $copy_ctas_image['button_link_2'] ?? null;
 $image = $copy_ctas_image['image'] ?? null;
 ?>
-<section id="<?=esc_attr($slug);?>" class="copy-ctas-image" data-magellan-target="<?=esc_attr($slug);?>">
-	<div class="grid-container">
+<section id="<?=esc_attr($slug);?>" class="copy-ctas-image has-brick-repeating-bg position-relative" data-magellan-target="<?=esc_attr($slug);?>">
+	<div class="grid-container position-relative">
 		<div class="grid-x grid-padding-x align-center tablet-flex-dir-row-reverse">
 			<?php if( !empty( $image ) ) {
 				$imgID = $image['ID'];
@@ -33,13 +33,15 @@ $image = $copy_ctas_image['image'] ?? null;
 			<?php if( !empty($heading) || !empty($subheading) || !empty($copy) || !empty($button_link_1) || !empty($button_link_2) ):?>
 				<div class="text-wrap cell small-12 tablet-7">
 					<?php if( !empty($heading) || !empty($subheading) ):?>
-						<div class="section-header h2">
+						<div class="section-header">
+							<h1>
 							<?php if( !empty($heading)):?>
-								<h2><?=esc_html($heading);?></h2>
+								<span class="h2"><?=esc_html($heading);?></span>
 							<?php endif;?>
 							<?php if( !empty($subheading) ):?>
-								<h3><?=esc_html($subheading);?></h3>
+								<span class="h3"><?=esc_html($subheading);?></span>
 							<?php endif;?>
+							</h1>
 						</div>
 						<?php if( !empty($copy) ):?>
 							<div class="copy-wrap entry-content">

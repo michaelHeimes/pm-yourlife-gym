@@ -110,17 +110,46 @@ button,
 	}
 }
 
-.accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle) {
-	> a {
-		&:after {
-			border: 0;
-			width: 15px;
-			height: 24.29px;
-			background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24.292' height='15'%3E%3Cpath d='M0 2.854 2.855 0l9.292 9.271L21.438 0l2.854 2.854L12.146 15Z' fill='%23c4a75f'/%3E%3C/svg%3E");
-			background-size: contain;
-			background-position: center;
-			background-repeat: no-repeat;
-			margin-top: -12px;
+.accordion {
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	overflow: hidden;
+	.accordion-item {
+		a.accordion-title {
+			border-bottom: 0;
+			font-size: 1.188rem;
+			font-size: clamp(1.188rem, 1.042rem + 0.648vw, 1.625rem);
+			@include breakpoint(medium) {
+				font-size: 1.625rem;
+				font-size: clamp(1.188rem, 1.042rem + 0.648vw, 1.625rem);
+			}
+			&:before {
+				right: 1.75rem;
+				margin-top: -33px;
+				font-size: 52px;
+			}
+		}
+		.accordion-content {
+			border-top: 0;
+		}
+		&.is-active {
+			a.accordion-title {
+				color: $black;
+			}
+		}
+		&:first-child {
+			a.accordion-title {
+				//border-bottom: 1px solid $black;
+				border-top-left-radius: 3px;
+				border-top-right-radius: 3px;
+			}
+		}
+		&:last-child {
+			a.accordion-title {
+				border-bottom: 1px solid $black;
+				border-bottom-left-radius: 3px;
+				border-bottom-right-radius: 3px;
+			}
 		}
 	}
 }
@@ -129,6 +158,7 @@ button,
 .swiper-pagination.swiper-pagination-bullets {
 	text-align: left;
 	bottom: 2rem;
+	z-index: 1;
 	span:not(.show-for-sr) {
 		position: relative;
 		width: rem-calc(30);

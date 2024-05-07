@@ -13,6 +13,13 @@
  */
 
 get_header();
+
+$has_prefooter_cta = false;
+$prefooter_cta = get_field('pre-footer_cta', 'option') ?? null;
+if( !empty( $prefooter_cta ) || !empty( get_field('sticky_get_started_cta', 'option') ) || !empty( get_field('street_address', 'option') ) || !empty( get_field('phone_number', 'option') ) ) {
+    $has_prefooter_cta = true;
+}
+
 ?>
 
 	<main id="primary" class="site-main">
@@ -29,4 +36,13 @@ get_header();
 	</main><!-- #main -->
 
 <?php
+
+if( $has_prefooter_cta == true ) {
+    get_template_part('template-parts/section', 'pre-footer-cta',
+        array(
+            'pre-footer-cta' => $prefooter_cta,
+        ),
+    );
+}
+
 get_footer();

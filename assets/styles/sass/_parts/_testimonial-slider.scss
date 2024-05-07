@@ -1,0 +1,14 @@
+.block.testimonial-slider {
+	.swiper-slide {
+		padding-bottom: 4rem;
+		p:first-of-type {
+			margin-top: 0 !important;
+		}
+	}
+	.swiper-pagination.swiper-pagination-bullets {
+		left: -11px;
+		bottom: 1rem;
+		@extend .grid-x;
+		justify-content: center;
+	}
+}

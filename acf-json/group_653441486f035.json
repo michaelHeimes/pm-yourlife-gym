@@ -134,7 +134,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "all"
+                "value": "acf\/accordion"
             }
         ]
     ],
@@ -147,5 +147,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1714516953
+    "modified": 1715039614
 }

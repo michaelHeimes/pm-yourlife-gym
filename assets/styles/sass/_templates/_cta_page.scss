@@ -15,13 +15,13 @@
 					border-color: $dark-gray;
 					margin-top: 2.1rem;
 					margin-bottom: 2.275rem;
-					margin-top: clamp(2.1rem, 1.457rem + 1.714vw, 3rem);
-					margin-bottom: clamp(2.275rem, 1.579rem + 1.857vw, 3.25rem);
+					margin-top: clamp(2.275rem, 1.95rem + 1.444vw, 3.25rem);
+					margin-bottom: clamp(2.275rem, 1.95rem + 1.444vw, 3.25rem);
 					@include breakpoint(medium) {
 						margin-top: 3rem;
 						margin-bottom: 3.25rem;
-						margin-top: clamp(2.1rem, 1.457rem + 1.714vw, 3rem);
-						margin-bottom: clamp(2.275rem, 1.579rem + 1.857vw, 3.25rem);
+						margin-top: clamp(2.275rem, 1.95rem + 1.444vw, 3.25rem);
+						margin-bottom: clamp(2.275rem, 1.95rem + 1.444vw, 3.25rem);
 					}
 				}
 				.accordion-title {
@@ -41,10 +41,10 @@
 						margin: 0;
 						line-height: 1.065;
 						font-size: 2.013rem;
-						font-size: clamp(2.013rem, 1.396rem + 1.643vw, 2.875rem);
+						font-size: clamp(2.013rem, 1.726rem + 1.277vw, 2.875rem);
 						@include breakpoint(medium) {
 							font-size: 2.875rem;
-							font-size: clamp(2.013rem, 1.396rem + 1.643vw, 2.875rem);
+							font-size: clamp(2.013rem, 1.726rem + 1.277vw, 2.875rem);
 						}
 					}
 				}
@@ -58,10 +58,10 @@
 				}
 				.number {
 					font-size: 4.156rem;
-					font-size: clamp(4.156rem, 2.884rem + 3.393vw, 5.938rem);
+					font-size: clamp(4.156rem, 3.562rem + 2.64vw, 5.938rem);
 					@include breakpoint(medium) {
 						font-size: 5.938rem;
-						font-size: clamp(4.156rem, 2.884rem + 3.393vw, 5.938rem);
+						font-size: clamp(4.156rem, 3.562rem + 2.64vw, 5.938rem);
 					}
 					svg {
 						position: absolute;
@@ -70,10 +70,10 @@
 						transform: rotateX(0deg) translateX(-50%);
 						transform-origin: center;
 						max-width: 2.063rem;
-						max-width: clamp(2.063rem, 1.699rem + 0.97vw, 2.572rem);
+						max-width: clamp(2.063rem, 1.893rem + 0.754vw, 2.572rem);
 						@include breakpoint(medium) {
 							max-width: 2.572rem;
-							max-width: clamp(2.063rem, 1.699rem + 0.97vw, 2.572rem);
+							max-width: clamp(2.063rem, 1.893rem + 0.754vw, 2.572rem);
 						}
 						
 						path {

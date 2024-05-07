@@ -39,7 +39,7 @@ if( !empty( $prefooter_cta ) || !empty( get_field('sticky_get_started_cta', 'opt
 							);
 						}?>
 						
-						<?php if( !empty( $fields['copy_ctas_image'] ) ) {
+						<?php if( !empty( $fields['parallax_rows'] ) ) {
 							get_template_part('template-parts/section', 'parallax-rows',
 								array(
 									'parallax_rows' => $parallax_rows ?? null,
@@ -70,7 +70,7 @@ if( !empty( $prefooter_cta ) || !empty( get_field('sticky_get_started_cta', 'opt
 		}
 		?>
 		
-		<div id="anchor-nav" class="anchor-nav bg-gold grid-x flex-dir-column align-middle" data-magellan data-animation-easing="swing" data-offset="200">
+		<div id="anchor-nav" class="anchor-nav bg-gold grid-x flex-dir-column align-middle show-for-tablet" data-magellan data-animation-easing="swing" data-offset="200">
 			<div class="inner bg-black grid-x flex-dir-column align-middle">
 				<a id="anchor-prev" href="#null">
 					<span class="show-for-sr">Prev</span>
