@@ -3,10 +3,11 @@ header.site-header {
 	background-image: linear-gradient(180deg, #333 0%, #010101 100%);
 	z-index: 5555;
 	max-width: 100% !important;
-	padding-top: 12.53px;
-	padding-bottom: 12.53px;
+	padding-top: .5395rem;
+	padding-bottom: .5395rem;
 	.top-bar {
 		li.logo {
+			max-width: 290px;
 			@include breakpoint(medium down) {
 				max-width: 263px;
 			}
@@ -23,7 +24,8 @@ header.site-header {
 		li {
 			a {
 				font-size: rem-calc(16);
-				padding: 0.75rem 1.3em;
+				line-height: 1.5;
+				padding: 0.4343rem 1.3em;
 				svg {
 					@include breakpoint(medium) {
 						margin-right: rem-calc(7);
@@ -138,6 +140,7 @@ header.site-header {
 					font-family: $font-header;
 					font-weight: 700;
 					font-size: rem-calc(20);
+					line-height: 1.55;
 					text-transform: uppercase;
 				}
 			}
@@ -178,15 +181,18 @@ header.site-header {
 			&.menu-item-has-children {
 				
 				ul.submenu {
+					padding-top: 1.2rem;
+					padding-bottom: 1.2rem;
+					background-color: #8B8B8B;
 					li {
 						&:first-child {
 							a {
-								padding-top: 2.2rem;
+								//padding-top: 2.2rem;
 							}
 						}
 						&:last-child {
 							a {
-								padding-bottom: 2rem;
+								//padding-bottom: 2rem;
 							}
 						}
 						&:only-child {
@@ -197,6 +203,7 @@ header.site-header {
 						}
 						a {
 							padding: 1rem 1.35rem;
+							transition: background-color .25s ease;
 						&:hover {
 							background-color: $black;
 							color: $color-gold;
@@ -277,46 +284,27 @@ header.site-header {
 }
 
 .off-canvas-wrapper {
-
-	.off-canvas {
-		position: fixed;
-		z-index: 5555;
-		top: 0;
-		left: 0;
+	.off-canvas.position-right {
+	}
+	.off-canvas-content.is-open-right.has-transition-push {
+		transform: translateX(0px);
+	}
+	.off-canvas.position-right {
 		width: 100%;
-		height: 100%;
-		background: #181818;
-		overflow: auto;
-		visibility: hidden;
-		opacity: 0;
-		transition: visibility 0s linear .4s, opacity .4s ease 0s;
+		max-width: 480px;
+		padding-bottom: 4rem;
+		transform: translateX(100%);
+		background: #181818 url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='479.999' height='398.864'%3E%3Cg data-name='logo bug' opacity='.452'%3E%3Cpath data-name='Union 1' d='M203.429 398.864V184.39l19.024 10.957L0 0h111.048L240 113.431 368.951 0H480L257.545 195.347l19.024-10.957v214.474Zm98.685-142.91 110.411-97.614-45.7 26.438v-51.337l60.686-53.264.145 145.834-125.537 110.736ZM52.341 226.012l.145-145.834 60.687 53.265v51.335l-45.7-26.437 110.411 97.613v80.793Z'/%3E%3C/g%3E%3C/svg%3E");
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: 50% 100%;
 		&.is-open {
-			visibility: visible;
-			opacity: 1;
-			transition: visibility 0s linear 0s, opacity .4s ease .01s;
-		}
-		&:after {
-			content: '';
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			width: 100%;
-			max-width: 500px;
-			margin: auto;
-			background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='479.999' height='398.864'%3E%3Cg data-name='logo bug' opacity='.452'%3E%3Cpath data-name='Union 1' d='M203.429 398.864V184.39l19.024 10.957L0 0h111.048L240 113.431 368.951 0H480L257.545 195.347l19.024-10.957v214.474Zm98.685-142.91 110.411-97.614-45.7 26.438v-51.337l60.686-53.264.145 145.834-125.537 110.736ZM52.341 226.012l.145-145.834 60.687 53.265v51.335l-45.7-26.437 110.411 97.613v80.793Z'/%3E%3C/g%3E%3C/svg%3E");
-			background-size: contain;
-			background-repeat: no-repeat;
-			background-position: 50% 100%;
+			transform: translateX(0);
 		}
 		.inner {
 			position: relative;
-			z-index: 1;
-			min-height: 100%;
-			padding-bottom: 102px;
-			max-width: 500px;
-			margin: auto;
+			z-index: 5;
+			padding: 0 18px;
 			.close-menu {
 				padding-top: 21px;
 				padding-bottom: 43px;
@@ -379,6 +367,15 @@ header.site-header {
 							}
 						}
 					}
+				}
+			}
+		}
+		.buttons-group {
+			padding-top: rem-calc(36);
+			> div {
+				margin-bottom: rem-calc(16);
+				.button.no-bg {
+					padding-left: 0;
 				}
 			}
 		}

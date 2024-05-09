@@ -42,7 +42,7 @@ $contact_background_image = $fields['contact_background_image'] ?? null;
 												$text_content = $accordion['text_content'];
 												$button_link = $accordion['button_link'];
 											?>
-							    				<li class="accordion-item<?php if( $i == 1 ){ echo ' is-active';}?>" data-accordion-item>
+							    				<li class="accordion-item<?php if( $i == 1 ){ echo ' is-active init';}?>" data-accordion-item>
 													<a href="#<?=esc_attr($slug);?>" class="accordion-title color-black grid-x align-middle">
 														<div class="grid-x grid-padding-x">
 															<div class="number color-gold font-header cell shrink medium-2 grid-x flex-dir-column align-middle text-center position-relative">

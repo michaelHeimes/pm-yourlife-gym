@@ -22,22 +22,29 @@
 			padding-top: rem-calc(42);
 		}
 	}
+	h1 {
+		margin-bottom: .55em;
+	}
 	.h2,
 	.h3 {
-		line-height: .87;
+		line-height: .92;
 		margin: 0;
 		font-size: 3rem;
 		font-size: clamp(3rem, 2.604rem + 1.759vw, 4.188rem);
 		@include breakpoint(medium) {
+			line-height: .86;
 			display: block;
 			font-size: 4.188rem;
 			font-size: clamp(3rem, 2.604rem + 1.759vw, 4.188rem);
 		}
 	}
-	.h3 {
-		@include breakpoint(medium) {
+
+	@include breakpoint(medium) {
+		.h2 {
+			margin-bottom: 0.03em;
+		}
+		.h3 {
 			text-transform: none;
-			line-height: .92;
 			font-size: 3.125rem;
 			font-size: clamp(2.188rem, 1.84rem + 1.543vw, 3.125rem);
 		}

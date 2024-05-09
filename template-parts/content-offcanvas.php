@@ -26,7 +26,7 @@
 			</ul>
 			<?php trailhead_off_canvas_nav(); ?>
 		</div>
-		<div class="grid-x grid-padding-x">
+		<div class="grid-x grid-padding-x buttons-group">
 			<?php 
 			$link = get_field('mobile_nav_button_link', 'option');
 			if( $link ): 

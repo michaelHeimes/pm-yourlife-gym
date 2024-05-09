@@ -96,6 +96,7 @@ button,
 			margin-right: rem-calc(27);
 		}
 		&.no-bg {
+			padding-left: 0;
 			background-color: transparent;
 			span {
 				margin-right: rem-calc(20);

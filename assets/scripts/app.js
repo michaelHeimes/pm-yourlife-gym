@@ -466,11 +466,12 @@
     }
     
     _app.accordions = function() {
-          $(".accordion").on("down.zf.accordion", function(event) {
-             var $openDrawer = $(this).find('.is-active');
-             $('html,body').animate({scrollTop: $($openDrawer).offset().top - 120}, 500);
-          }); 
-       } 
+        $(".accordion").on("down.zf.accordion", function(event) {
+            var $openDrawer = $(this).find('.is-active:not(.init)');
+            $('html,body').animate({scrollTop: $($openDrawer).offset().top - 120}, 500);
+            $(this).find('.is-active:not(.init)').removeClass('init');
+        }); 
+    } 
             
     _app.init = function() {
         
@@ -487,7 +488,7 @@
         _app.autoPlayLoopedVideos();
         _app.video_lazyload();
         _app.parallaxRows();
-        _app.accordions();
+        //_app.accordions();
         _app.block_testimonial_slider();
         //_app.footer_nav_cols();
     }

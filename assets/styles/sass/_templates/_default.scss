@@ -135,6 +135,14 @@ body.single-post {
 	}
 }
 
+body.error404 {
+	.entry-content {
+		> * {
+			margin-top: 0 !important;
+		}
+	}
+}
+
 body.single-post .entry-content {
 	padding-bottom: 0;
 }
@@ -217,12 +225,6 @@ body.single-post {
 		&.no-banner {
 				padding-top: 5.55rem;
 		}
-	}
-}
-
-body.error404 {
-	.entry-content {	
-		margin-bottom: 5rem;
 	}
 }
 
