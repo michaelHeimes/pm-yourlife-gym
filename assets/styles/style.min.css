@@ -9387,18 +9387,22 @@ body.error404 .entry-content:not(.accordion-content):not(.accordion-content) p,
 body.error404 .entry-content:not(.accordion-content):not(.accordion-content) ul:not(.tabs):not(.accordion),
 body.error404 .entry-content:not(.accordion-content):not(.accordion-content) ol,
 body.error404 .entry-content:not(.accordion-content):not(.accordion-content) .button-group,
+body.error404 .entry-content:not(.accordion-content):not(.accordion-content) .inner > .wp-block-image,
 body.page-template-default .entry-content:not(.accordion-content):not(.accordion-content) p,
 body.page-template-default .entry-content:not(.accordion-content):not(.accordion-content) ul:not(.tabs):not(.accordion),
 body.page-template-default .entry-content:not(.accordion-content):not(.accordion-content) ol,
 body.page-template-default .entry-content:not(.accordion-content):not(.accordion-content) .button-group,
+body.page-template-default .entry-content:not(.accordion-content):not(.accordion-content) .inner > .wp-block-image,
 body.page-template-page-search .entry-content:not(.accordion-content):not(.accordion-content) p,
 body.page-template-page-search .entry-content:not(.accordion-content):not(.accordion-content) ul:not(.tabs):not(.accordion),
 body.page-template-page-search .entry-content:not(.accordion-content):not(.accordion-content) ol,
 body.page-template-page-search .entry-content:not(.accordion-content):not(.accordion-content) .button-group,
+body.page-template-page-search .entry-content:not(.accordion-content):not(.accordion-content) .inner > .wp-block-image,
 body.single-post .entry-content:not(.accordion-content):not(.accordion-content) p,
 body.single-post .entry-content:not(.accordion-content):not(.accordion-content) ul:not(.tabs):not(.accordion),
 body.single-post .entry-content:not(.accordion-content):not(.accordion-content) ol,
-body.single-post .entry-content:not(.accordion-content):not(.accordion-content) .button-group {
+body.single-post .entry-content:not(.accordion-content):not(.accordion-content) .button-group,
+body.single-post .entry-content:not(.accordion-content):not(.accordion-content) .inner > .wp-block-image {
   line-height: 2;
   margin-top: 1.5625rem;
   margin-bottom: 1.5625rem;
@@ -9408,18 +9412,22 @@ body.single-post .entry-content:not(.accordion-content):not(.accordion-content) 
   body.error404 .entry-content:not(.accordion-content):not(.accordion-content) ul:not(.tabs):not(.accordion),
   body.error404 .entry-content:not(.accordion-content):not(.accordion-content) ol,
   body.error404 .entry-content:not(.accordion-content):not(.accordion-content) .button-group,
+  body.error404 .entry-content:not(.accordion-content):not(.accordion-content) .inner > .wp-block-image,
   body.page-template-default .entry-content:not(.accordion-content):not(.accordion-content) p,
   body.page-template-default .entry-content:not(.accordion-content):not(.accordion-content) ul:not(.tabs):not(.accordion),
   body.page-template-default .entry-content:not(.accordion-content):not(.accordion-content) ol,
   body.page-template-default .entry-content:not(.accordion-content):not(.accordion-content) .button-group,
+  body.page-template-default .entry-content:not(.accordion-content):not(.accordion-content) .inner > .wp-block-image,
   body.page-template-page-search .entry-content:not(.accordion-content):not(.accordion-content) p,
   body.page-template-page-search .entry-content:not(.accordion-content):not(.accordion-content) ul:not(.tabs):not(.accordion),
   body.page-template-page-search .entry-content:not(.accordion-content):not(.accordion-content) ol,
   body.page-template-page-search .entry-content:not(.accordion-content):not(.accordion-content) .button-group,
+  body.page-template-page-search .entry-content:not(.accordion-content):not(.accordion-content) .inner > .wp-block-image,
   body.single-post .entry-content:not(.accordion-content):not(.accordion-content) p,
   body.single-post .entry-content:not(.accordion-content):not(.accordion-content) ul:not(.tabs):not(.accordion),
   body.single-post .entry-content:not(.accordion-content):not(.accordion-content) ol,
-  body.single-post .entry-content:not(.accordion-content):not(.accordion-content) .button-group {
+  body.single-post .entry-content:not(.accordion-content):not(.accordion-content) .button-group,
+  body.single-post .entry-content:not(.accordion-content):not(.accordion-content) .inner > .wp-block-image {
     margin-top: 2.1875rem;
     margin-bottom: 2.1875rem;
   }
@@ -9522,6 +9530,21 @@ body.page-template-default .entry-content:not(.accordion-content):not(.accordion
 body.page-template-page-search .entry-content:not(.accordion-content):not(.accordion-content) .content-wrap > *:first-child,
 body.single-post .entry-content:not(.accordion-content):not(.accordion-content) .content-wrap > *:first-child {
   margin-top: 0.625rem;
+}
+@media print, screen and (max-width: 39.99875em) {
+  body.error404 .entry-content:not(.accordion-content):not(.accordion-content) figure.alignleft,
+  body.error404 .entry-content:not(.accordion-content):not(.accordion-content) figure.alignright,
+  body.page-template-default .entry-content:not(.accordion-content):not(.accordion-content) figure.alignleft,
+  body.page-template-default .entry-content:not(.accordion-content):not(.accordion-content) figure.alignright,
+  body.page-template-page-search .entry-content:not(.accordion-content):not(.accordion-content) figure.alignleft,
+  body.page-template-page-search .entry-content:not(.accordion-content):not(.accordion-content) figure.alignright,
+  body.single-post .entry-content:not(.accordion-content):not(.accordion-content) figure.alignleft,
+  body.single-post .entry-content:not(.accordion-content):not(.accordion-content) figure.alignright {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
 }
 body.error404 .entry-content:not(.accordion-content):not(.accordion-content) ul:not(.tabs),
 body.error404 .entry-content:not(.accordion-content):not(.accordion-content) ol:not(.tabs),

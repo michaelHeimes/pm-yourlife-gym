@@ -67,7 +67,8 @@ body.single-post {
 		p,
 		ul:not(.tabs):not(.accordion),
 		ol,
-		.button-group  {
+		.button-group,
+		.inner > .wp-block-image  {
 			line-height: 2;
 			margin-top: rem-calc(25);
 			margin-bottom: rem-calc(25);
@@ -115,6 +116,15 @@ body.single-post {
 		.content-wrap {
 			> *:first-child {
 				margin-top: rem-calc(10);
+			}
+		}
+		figure.alignleft,
+		figure.alignright {
+			@include breakpoint(small down) {
+				float: none;
+				display: block;
+				width: 100%;
+				text-align: center;
 			}
 		}
 		ul,
