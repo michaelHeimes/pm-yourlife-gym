@@ -73,10 +73,18 @@
 			line-height: 1.02;
 			font-size: 2.975rem;
 			font-size: clamp(2.975rem, 2.503rem + 2.099vw, 4.25rem);
+			@include breakpoint(medium down) {
+				margin-bottom: 1rem;
+			}
 			@include breakpoint(medium) {
 				line-height: .8235;
 				font-size: 4.25rem;
 				font-size: clamp(2.975rem, 2.503rem + 2.099vw, 4.25rem);
+			}
+			@include breakpoint(tablet) {
+				br {
+					display: none;
+				}
 			}
 		}
 	}
@@ -149,12 +157,12 @@
 			position: relative;
 			z-index: 2;
 			border: 8px solid $dark-gray;
-			padding: 2.5rem 2rem 2.65rem;
+			padding: 2.5rem 2rem 1.45rem;
 			@include breakpoint(small down) {
 				margin-top: -106px;
 			}
 			@include breakpoint(medium) {
-				padding: 2.5rem 3.4rem 2.65rem;
+				padding: 2.5rem 3.4rem 1.45rem;
 
 			}
 			h3 {
@@ -169,6 +177,9 @@
 			}
 			.button-group {
 				padding-top: 1.5rem;
+				a.button {
+					margin-bottom: 1.25rem;
+				}
 			}
 		}
 	}

@@ -11,7 +11,7 @@ $slider_transition_delay = $home_hero['slider_transition_delay'] ?? null;
 $slides = $home_hero['slides'] ?? null;
 
 ?>
-<header class="entry-header page-banner has-bg grid-x align-middle style-hero-slider"<?php if( !empty($id_for_anchor) ) { echo ' data-magellan-target="' . sanitize_title($id_for_anchor) . '"'; }?>>
+<header id="<?=sanitize_title($id_for_anchor);?>" class="entry-header page-banner has-bg grid-x align-middle style-hero-slider"<?php if( !empty($id_for_anchor) ) { echo ' data-magellan-target="' . sanitize_title($id_for_anchor) . '"'; }?>>
 	<div class="bg">
 		<div class="accent-wrap"></div>
 		<?php if( !empty( $slides ) ):?>

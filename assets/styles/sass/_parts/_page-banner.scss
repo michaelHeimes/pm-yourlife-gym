@@ -51,9 +51,7 @@
 			display: flex;
 			.content {
 				display: flex;
-				//height: 100%;
 				> .grid-x {
-					width: 100%;
 					align-items: center;
 					box-sizing: border-box;
 				}
@@ -67,10 +65,21 @@
 					transition: .25s ease;
 				}
 			}
-			button:hover {
-				svg {
-					path:first-child {
-						opacity: 1;
+			.btn-wrap {
+				@include breakpoint(small down) {
+					text-align: center;
+				}
+			}
+			button {
+				@include breakpoint(small down) {
+					width: 67%;
+					margin: 2rem auto 0;
+				}
+				&:hover {
+					svg {
+						path:first-child {
+							opacity: 1;
+						}
 					}
 				}
 			}

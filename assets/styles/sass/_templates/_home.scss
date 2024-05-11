@@ -5,10 +5,10 @@
 		right: 0;
 		bottom: 30px;
 		padding: 3px 0 3px 3px;
-		clip-path: polygon(0% 0%, 100% 0%, 100% 120%, 0% 91%);
+		clip-path: polygon(0% 0%, 100% 0%, 100% 334px, 0% 280px);
 		.inner {
-			padding: .4rem 0.45rem .7rem;
-			clip-path: polygon(0% 0%, 100% 0%, 100% 120%, 0% 91%);
+			padding: 0.55rem 0.5313rem 0.75rem;
+			clip-path: polygon(0% 0%, 100% 0%, 100% 327px, 0% 276px);
 		}
 		&:before {
 			content: '';
@@ -42,7 +42,7 @@
 				a {
 					padding: 0;
 					span {
-						margin: 8px;
+						margin: 7px;
 					}
 				}
 			}

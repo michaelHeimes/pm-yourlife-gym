@@ -316,10 +316,10 @@
                 speed: 500,
                 spaceBetween: 0,
                 effect: "fade",
-                autoplay: {
-                  delay: delay + '000',
-                  disableOnInteraction: false,
-                },
+                // autoplay: {
+                //   delay: delay + '000',
+                //   disableOnInteraction: false,
+                // },
                 pagination: {
                     el: ".swiper-pagination",
                     clickable: true,

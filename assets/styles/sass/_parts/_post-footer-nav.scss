@@ -26,6 +26,11 @@
 			margin-top: 13px;
 		}
 	}
+	.right h3 {
+		@include breakpoint(small down) {
+			margin-top: 4rem;
+		}
+	}
 	ul {
 		padding-top: 1.6rem;
 	}
@@ -74,7 +79,7 @@
 					content: '';
 					display: block;
 					position: absolute;
-					right: -#{($mediumGutter * 1.5)};
+					right: -#{($mediumGutter * .75)};
 					height: 100%;
 					width: 1px;
 					border-left: 1px solid #E0E0E0;

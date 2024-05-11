@@ -10,9 +10,9 @@ $page_banner = get_field('page_banner') ?? null;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php if( !empty( $page_banner  ) ) {
-                get_template_part('template-parts/section', 'page-banner');
-        }?>
+	<?php if( !empty( $page_banner['slides']  ) ) {
+        get_template_part('template-parts/section', 'page-banner');
+    }?>
 	<div class="entry-content has-brick-repeating-bg position-relative">
         <div class="grid-container">
             <div class="grid-x grid-padding-x align-center">

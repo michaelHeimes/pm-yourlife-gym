@@ -1,7 +1,7 @@
 <section class="post-footer-nav">
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x align-center">
-			<div class="left cell small-12 medium-8 tablet-7">
+			<div class="left cell small-12 medium-auto tablet-8">
 				<?php
 				$currentpost = "";
 				$cat_ID = 0;
@@ -54,7 +54,7 @@
 					<li class="va-wrap"><a href="<?php echo get_post_type_archive_link( 'post' );?>"><span>View All News & Articles</span> <svg xmlns="http://www.w3.org/2000/svg" width="7.41" height="12" viewBox="0 0 7.41 12"><path id="next_hover_color" data-name="next hover color" d="M10,6,8.59,7.41,13.17,12,8.59,16.59,10,18l6-6Z" transform="translate(-8.59 -6)" fill="#c5a75f"/></svg></a></li>
 				</ul>
 			</div>
-			<div class="cell small-12 medium-4 tablet-3">
+			<div class="right cell small-12 medium-shrink tablet-4">
 				<h3 class="h4">News Categories</h3>
 				<ul class="menu vertical">
 					<?php
