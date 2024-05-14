@@ -6,10 +6,10 @@
 }
 .prefooter-cta {
 	padding-top: 4.515rem;
-	padding-bottom: 3.724rem;
+	padding-bottom: 2.474rem;
 	@include breakpoint(medium) {
 		padding-top: 6.45rem;
-		padding-bottom: 5.32rem;
+		padding-bottom: 4.07rem;
 	}
 	h2 {
 		margin-bottom: 1.2em;
@@ -23,7 +23,7 @@
 		}
 	}
 	.link-wrap {
-		margin-bottom: 2rem;
+		margin-bottom: rem-calc(52);
 		@include breakpoint(small down) {
 			display: flex;
 			justify-content: center;

@@ -2,9 +2,13 @@
 	.accordion-blocks-wrap {
 		padding-top: rem-calc(36.4);
 		padding-bottom: rem-calc(86.8);
+		padding-top: clamp(2.275rem, 0.664rem + 7.16vw, 6.625rem);
+		padding-bottom: clamp(5.425rem, 4.564rem + 3.827vw, 7.75rem);
 		@include breakpoint(medium) {
 			padding-top: rem-calc(106);
 			padding-bottom: rem-calc(124);
+			padding-top: clamp(2.275rem, 0.664rem + 7.16vw, 6.625rem);
+			padding-bottom: clamp(5.425rem, 4.564rem + 3.827vw, 7.75rem);
 		}
 		.accordion {
 			background: transparent;
@@ -95,6 +99,11 @@
 	.contact-form {
 		padding-top: rem-calc(95);
 		padding-bottom: rem-calc(55);
+		.gform_heading {
+			p.gform_required_legend {
+				color: #ddd;
+			}
+		}
 		svg.arrow-down {
 			position: absolute;
 			top: 0;

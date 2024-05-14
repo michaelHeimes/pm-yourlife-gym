@@ -57,9 +57,13 @@ body.single-post {
 		overflow: hidden;
 		padding-top: 5.5rem;
 		padding-bottom: 5.5rem;
+		padding-top: clamp(5.5rem, 4.574rem + 4.115vw, 8rem);
+		padding-bottom: clamp(5.5rem, 4.574rem + 4.115vw, 8rem);
 		@include breakpoint(medium) {
 			padding-top: 8rem;
 			padding-bottom: 8rem;
+			padding-top: clamp(5.5rem, 4.574rem + 4.115vw, 8rem);
+			padding-bottom: clamp(5.5rem, 4.574rem + 4.115vw, 8rem);
 		}
 		.inner > *:first-child {
 			margin-top: 0;
@@ -71,10 +75,15 @@ body.single-post {
 		.inner > .wp-block-image  {
 			line-height: 2;
 			margin-top: rem-calc(25);
-			margin-bottom: rem-calc(25);
+			margin-bottom: rem-calc(0);
 			@include breakpoint(medium) {
 				margin-top: rem-calc(35);
-				margin-bottom: rem-calc(35);
+				margin-bottom: rem-calc(0);
+			}
+		}
+		.button-group.block {
+			.cell {
+				margin-bottom: rem-calc(40);
 			}
 		}
 		h1,

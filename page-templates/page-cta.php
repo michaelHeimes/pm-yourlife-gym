@@ -72,7 +72,7 @@ $contact_background_image = $fields['contact_background_image'] ?? null;
 																				$link_title = $link['title'];
 																				$link_target = $link['target'] ? $link['target'] : '_self';
 																				?>
-																				<div>
+																				<div data-magellan>
 																					<a class="button chev-link grid-x align-center" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">
 																						<span><?php echo esc_html( $link_title ); ?></span>
 																						<svg xmlns="http://www.w3.org/2000/svg" width="11.583" height="18.758" viewBox="0 0 11.583 18.758"><path id="ic_chevron_right_24px" d="M10.794,6,8.59,8.2l7.159,7.175L8.59,22.554l2.2,2.2,9.379-9.379Z" transform="translate(-8.59 -6)"/></svg>
@@ -103,10 +103,11 @@ $contact_background_image = $fields['contact_background_image'] ?? null;
 					</section> <!-- end article section -->
 							
 					<?php
-
+					
+					$anchor_id = $fields['form_id'];
 					if ($form_id && $form_id !== 'none') :
 						$escaped_form_id = acf_esc_html($form_id);?>
-						<section class="contact-form bg-black has-object-fit position-relative">
+						<section id="<?=sanitize_title($anchor_id);?>" data-magellan-target="<?=sanitize_title($anchor_id);?>" class="contact-form bg-black has-object-fit position-relative">
 							<?php if( !empty( $contact_background_image ) ) {
 								$imgID = $contact_background_image['ID'];
 								$img_alt = trim( strip_tags( get_post_meta( $imgID, '_wp_attachment_image_alt', true ) ) );

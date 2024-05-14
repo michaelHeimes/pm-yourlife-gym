@@ -10,7 +10,7 @@
  */
 
 // Create id attribute allowing for custom "anchor" value.
-$id = 'button-group' . $block['id'];
+$id = 'button-group ' . $block['id'];
 if( !empty($block['anchor']) ) {
     $id = $block['anchor'];
 }

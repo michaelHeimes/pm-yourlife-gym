@@ -21,15 +21,7 @@ $image = $copy_ctas_image['image'] ?? null;
 ?>
 <section id="<?=esc_attr($slug);?>" class="copy-ctas-image has-brick-repeating-bg position-relative" data-magellan-target="<?=esc_attr($slug);?>">
 	<div class="grid-container position-relative">
-		<div class="grid-x grid-padding-x align-center tablet-flex-dir-row-reverse">
-			<?php if( !empty( $image ) ) {
-				$imgID = $image['ID'];
-				$img_alt = trim( strip_tags( get_post_meta( $imgID, '_wp_attachment_image_alt', true ) ) );
-				$img = wp_get_attachment_image( $imgID, 'full', false, [ "class" => "", "alt"=>$img_alt] );
-				echo '<div class="img-wrap cell small-12 medium-8 tablet-5">';
-				echo $img;
-				echo '</div>';
-			}?>
+		<div class="grid-x grid-padding-x align-center">
 			<?php if( !empty($heading) || !empty($subheading) || !empty($copy) || !empty($button_link_1) || !empty($button_link_2) ):?>
 				<div class="text-wrap cell small-12 tablet-7">
 					<?php if( !empty($heading) || !empty($subheading) ):?>
@@ -83,6 +75,14 @@ $image = $copy_ctas_image['image'] ?? null;
 					<?php endif;?>
 				</div>
 			<?php endif;?>
+			<?php if( !empty( $image ) ) {
+				$imgID = $image['ID'];
+				$img_alt = trim( strip_tags( get_post_meta( $imgID, '_wp_attachment_image_alt', true ) ) );
+				$img = wp_get_attachment_image( $imgID, 'full', false, [ "class" => "", "alt"=>$img_alt] );
+				echo '<div class="img-wrap cell small-12 medium-8 tablet-5">';
+				echo $img;
+				echo '</div>';
+			}?>
 		</div>
 	</div>
 </section>

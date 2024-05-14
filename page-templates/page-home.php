@@ -70,7 +70,7 @@ if( !empty( $prefooter_cta ) || !empty( get_field('sticky_get_started_cta', 'opt
 		}
 		?>
 		
-		<div id="anchor-nav" class="anchor-nav bg-gold grid-x flex-dir-column align-middle show-for-tablet" data-magellan data-animation-easing="swing" data-offset="200">
+		<div id="anchor-nav" class="anchor-nav bg-gold grid-x flex-dir-column align-middle show-for-tablet" data-magellan data-animation-easing="swing" data-offset="105" data-threshold="1">
 			<div class="inner bg-black grid-x flex-dir-column align-middle">
 				<a id="anchor-prev" href="#null">
 					<span class="show-for-sr">Prev</span>
