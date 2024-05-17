@@ -13,14 +13,6 @@
 		<div class="cell shrink">
 			
 			<div class="site-branding show-for-sr">
-				<?php if( !empty( get_field('header_logo') ) ) {
-					$imgID = get_field('header_logo')['ID'];
-					$img_alt = trim( strip_tags( get_post_meta( $imgID, '_wp_attachment_image_alt', true ) ) );
-					$img = wp_get_attachment_image( $imgID, 'full', false, [ "class" => "", "alt"=>$img_alt] );
-					echo '<div class="logo-wrap">';
-					echo $img;
-					echo '</div>';
-				}?>
 				<?php
 				if ( is_front_page() && is_home() ) :
 					?>

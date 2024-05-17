@@ -20,31 +20,6 @@
             "endpoint": 0
         },
         {
-            "key": "field_662ad360ab69d",
-            "label": "Header Logo",
-            "name": "header_logo",
-            "aria-label": "",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "preview_size": "thumbnail"
-        },
-        {
             "key": "field_6637ec3417090",
             "label": "Mobile Nav Button Link",
             "name": "mobile_nav_button_link",
@@ -133,31 +108,6 @@
             "endpoint": 0
         },
         {
-            "key": "field_662fa74e19cae",
-            "label": "Footer Logo",
-            "name": "footer_logo",
-            "aria-label": "",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "preview_size": "medium"
-        },
-        {
             "key": "field_662ba7def318a",
             "label": "Copyright Text",
             "name": "copyright_text",
@@ -183,7 +133,7 @@
             "name": "subfooter_links",
             "aria-label": "",
             "type": "repeater",
-            "instructions": "Examples would be: Privacy Policy, Terms of Ude, etc.",
+            "instructions": "Examples would be: Privacy Policy, Terms of Use, etc.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -351,5 +301,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1715004793
+    "modified": 1715819415
 }

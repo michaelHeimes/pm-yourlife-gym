@@ -22,10 +22,10 @@ a {
 
 .entry-content {
 	a:not(.chev-link):not(.accordion-title) {
-		color: #048B12;
-		text-decoration: underline;
+		color:#b09049;
 		&:hover {
 			color: $color-gold;
+			text-decoration: underline;
 		}
 	}
 	ul,

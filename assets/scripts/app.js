@@ -47,7 +47,7 @@
 //@*prepros-prepend vendor/foundation/js/plugins/foundation.equalizer.js
 
 // Responsive Images
-//@prepros-prepend vendor/foundation/js/plugins/foundation.interchange.js
+//@*prepros-prepend vendor/foundation/js/plugins/foundation.interchange.js
 
 // Anchor Link Scrolling
 //@prepros-prepend vendor/foundation/js/plugins/foundation.smoothScroll.js
@@ -316,10 +316,10 @@
                 speed: 500,
                 spaceBetween: 0,
                 effect: "fade",
-                // autoplay: {
-                //   delay: delay + '000',
-                //   disableOnInteraction: false,
-                // },
+                autoplay: {
+                  delay: delay + '000',
+                  disableOnInteraction: false,
+                },
                 pagination: {
                     el: ".swiper-pagination",
                     clickable: true,

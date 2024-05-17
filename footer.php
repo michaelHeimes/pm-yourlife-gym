@@ -95,16 +95,6 @@ $subfooter_links = get_field('subfooter_links', 'option') ?? null;
 										<?php if( !empty(get_field('copyright_text', 'option') ) ){
 											echo get_field('copyright_text', 'option');	
 										};?>
-										
-										<?php 
-										$link = get_field('footer_privacy_policy_link', 'option');
-										if( $link ): 
-											$link_url = $link['url'];
-											$link_title = $link['title'];
-											$link_target = $link['target'] ? $link['target'] : '_self';
-											?>
-											<a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
-										<?php endif; ?>
 										<?php if( !empty($subfooter_links) ):
 											foreach($subfooter_links as $subfooter_link):	
 											$link = $subfooter_link['link'] ?? null;
