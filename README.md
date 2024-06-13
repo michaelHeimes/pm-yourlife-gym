@@ -21,5 +21,5 @@ Note: `.no-sidebar` styles are automatically loaded.
 
 Developer Notes:
 
-Clamp range from 360px to 1332px
+Clamp settings range from 360px to 1332px
 

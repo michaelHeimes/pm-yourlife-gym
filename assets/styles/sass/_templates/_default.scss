@@ -70,8 +70,7 @@ body.single-post {
 		}
 		ul:not(.tabs):not(.accordion),
 		ol,
-		.button-group,
-		.inner > .wp-block-image  {
+		.button-group {
 			line-height: 2;
 			margin-top: rem-calc(25);
 			margin-bottom: rem-calc(0);
@@ -182,7 +181,7 @@ body.single-post .entry-content {
 }
 :where(.wp-block-columns.is-layout-flex) {
 	> .wp-block-column-is-layout-flow {
-		>*:not(.wp-block-imag) {
+		>* {
 			margin-bottom: 2.2rem;
 		}
 	}

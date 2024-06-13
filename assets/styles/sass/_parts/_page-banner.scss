@@ -50,7 +50,7 @@
 		.swiper-slide {
 			display: flex;
 			.content {
-				display: flex;
+
 				> .grid-x {
 					align-items: center;
 					box-sizing: border-box;
@@ -58,6 +58,7 @@
 				.h3 {
 					line-height: 1.2;
 					margin: 0;
+					font-size: clamp(1.969rem, 1.656rem + 1.389vw, 2.813rem);
 				}
 			}
 			svg {
