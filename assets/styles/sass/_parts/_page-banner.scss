@@ -8,6 +8,12 @@
 	&.style-hero-slider {
 		min-height: 100vh;
 		max-height: 790px;
+		opacity: 0;
+		overflow: hidden;
+		transition: opacity .2s ease .1s;
+		&.loaded {
+			opacity: 1;
+		}
 		.accent-wrap {
 			position: absolute;
 			z-index: 2;
@@ -29,6 +35,24 @@
 		}
 		.content {
 			z-index: 2;
+		}
+		h1 {
+			text-shadow: 0px 0px 8px rgba(0,0,0,1);
+			line-height: .97959;
+			margin-bottom: .205em;
+			font-size: 4.287rem;
+			font-size: clamp(4.287rem, 3.394rem + 3.973vw, 6.125rem);
+			
+			@include breakpoint(medium) {
+				font-size: 6.125rem;
+				font-size: clamp(4.287rem, 3.394rem + 3.973vw, 6.125rem);
+			}
+		}
+		button,
+		.button {
+			span {
+				margin-right: rem-calc(20);
+			}
 		}
 	}
 	&.style-banner-slider {
@@ -145,26 +169,6 @@
 			flex: 1;
 			h1 {
 				text-shadow: 0px 0px 8px rgba(0,0,0,1);
-			}
-		}
-	}
-	&.style-hero-slider {
-		h1 {
-			text-shadow: 0px 0px 8px rgba(0,0,0,1);
-			line-height: .97959;
-			margin-bottom: .205em;
-			font-size: 4.287rem;
-			font-size: clamp(4.287rem, 3.394rem + 3.973vw, 6.125rem);
-			
-			@include breakpoint(medium) {
-				font-size: 6.125rem;
-				font-size: clamp(4.287rem, 3.394rem + 3.973vw, 6.125rem);
-			}
-		}
-		button,
-		.button {
-			span {
-				margin-right: rem-calc(20);
 			}
 		}
 	}

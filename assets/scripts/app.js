@@ -361,6 +361,7 @@
                 heroBanner.style.minHeight = minHeight + 'px';
             }
             setHeroBannerMinHeight();
+            heroBanner.classList.add('loaded');
             window.addEventListener('resize', function() {
                 setHeroBannerMinHeight();
             });
