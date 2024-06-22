@@ -2,8 +2,12 @@ body {
 	.gform_wrapper.gravity-theme {
 		.gform_fields {
 			display: grid;
-			grid-column-gap: 39px;
-			grid-row-gap: 41px;
+			grid-column-gap: 24px;
+			grid-row-gap: 32px;
+			@media (min-width: 641px) {
+				grid-column-gap: 39px;
+				grid-row-gap: 41px;
+			}
 		}
 		@media (max-width: 640px) {
 			.ginput_complex span:not(:last-of-type) {
@@ -65,7 +69,10 @@ body {
 	.entry-content {
 		.gform_wrapper.gravity-theme {
 			.gform_fields {
-				grid-row-gap: 34px;
+				grid-row-gap: 20px;
+				@media (min-width: 641px) {
+					grid-row-gap: 34px;
+				}
 			}
 			.gfield_label,
 			.ginput_complex label {
@@ -88,12 +95,15 @@ body {
 				background-color: $white;
 				border: 1px solid $black;
 				&:not(textarea):not(select) {
-					height: rem-calc(60);
+					height: rem-calc(48);
+					@media (min-width: 641px) {
+						height: rem-calc(60);
+					}
 				}
 			}
 			@media (max-width: 640px) {
 				.ginput_complex span:not(:last-of-type) {
-					margin-bottom: rem-calc(34);
+					margin-bottom: rem-calc(20);
 				}
 			}
 			@media (min-width: 641px) {
