@@ -39,7 +39,7 @@ $slides = $page_banner['slides'] ?? null;
 							</div>
 						<?php endif;?>
 
-						<div class="grid-container content grid-x">
+						<div class="grid-container content grid-x align-center">
 							<div class="small-12 grid-x grid-padding-x align-center align-middle flex-dir-column medium-flex-dir-row-reverse">
 								<?php if( !empty($text_banner) ):?>
 									<div class="cell small-12 <?php if( !empty( $video_modal_url ) ) { echo ' medium-6 large-5';} else { echo ' medium-10 large-8 align-center text-center'; }?> position-relative grid-x align-middle">

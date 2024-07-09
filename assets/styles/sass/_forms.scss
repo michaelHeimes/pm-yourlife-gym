@@ -94,8 +94,9 @@ body {
 				color: $black;
 				background-color: $white;
 				border: 1px solid $black;
-				&:not(textarea):not(select) {
+				&:not(textarea) {
 					height: rem-calc(48);
+					width: 100%;
 					@media (min-width: 641px) {
 						height: rem-calc(60);
 					}
