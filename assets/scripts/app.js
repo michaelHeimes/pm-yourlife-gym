@@ -144,6 +144,26 @@
         });
     }
     
+    _app.sticky_snipe = function() {        
+        $(window).on("load scroll resize", function(e) {
+            const utilityNav = $('.utility-nav');
+            let header_height = 85;
+        
+            if ($(utilityNav).length) {
+                header_height = $('.site-header').outerHeight();
+            }
+        
+            var delay_height = 0;
+        
+            if ($(this).scrollTop() > (header_height + delay_height)) {
+                $(utilityNav).addClass('stuck');
+            } else {
+                $(utilityNav).removeClass('stuck');
+            }
+        });
+
+    }
+    
     _app.video_lazyload = function() {
         $(document).on('open.zf.reveal', '[data-reveal]', function() {
             if ($(this).hasClass('video-modal')) {
@@ -484,6 +504,7 @@
         
         // Custom Functions
         //_app.mobile_takover_nav();
+        _app.sticky_snipe();
         _app.home_page_anchors();
         _app.banner_slider();
         _app.autoPlayLoopedVideos();
