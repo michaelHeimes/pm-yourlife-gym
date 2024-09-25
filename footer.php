@@ -136,6 +136,20 @@ $subfooter_links = get_field('subfooter_links', 'option') ?? null;
 <?php if( !empty( get_field('before_closing_body_tag', 'option') ) ) {
 	echo get_field('before_closing_body_tag', 'option');
 }?>
+<!-- chat feature -->
 
+<script type="text/javascript">
+  (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '66e7798d53d61279f3ce5dac' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production'
+        });
+      }
+      v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+  })(document, 'script');
+</script>
 </body>
 </html>
