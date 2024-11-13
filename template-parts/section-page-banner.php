@@ -4,8 +4,8 @@ $page_banner = get_field('page_banner') ?? null;
 // Sliders
 $slider_transition_delay = $page_banner['slider_transition_delay'] ?? null;
 $slides = $page_banner['slides'] ?? null;
-
 ?>
+<?php if( !empty( $page_banner['centered_heading'] ) || !empty( $page_banner['slides'] ) ):?>
 <header class="entry-header page-banner has-bg grid-x align-middle style-banner-slider">
 	<?php if( !empty( $slides ) ):?>
 		<div class="bg bg-slider" data-delay="<?= esc_attr( $slider_transition_delay );?>">
@@ -108,3 +108,4 @@ $slides = $page_banner['slides'] ?? null;
 		</div>
 	<?php endif;?>
 </header>
+<?php endif;?>

@@ -8,6 +8,7 @@ $centered_heading = $page_banner['centered_heading'] ?? null;
 $centered_text = $page_banner['centered_text'] ?? null;
 
 ?>
+<?php if( !empty( $page_banner['centered_heading'] ) || !empty( $page_banner['slides'] ) ):?>
 <header class="entry-header page-banner has-bg grid-x align-middle style-banner-slider cta-page-banner">
 	<?php if( !empty( $slides ) ):?>
 		<div class="bg bg-slider" data-delay="<?= esc_attr( $slider_transition_delay );?>">
@@ -101,3 +102,4 @@ $centered_text = $page_banner['centered_text'] ?? null;
 		</div>
 	<?php endif;?>
 </header>
+<?php endif;?>

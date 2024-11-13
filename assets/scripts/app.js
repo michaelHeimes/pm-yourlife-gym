@@ -461,7 +461,7 @@
         // Function to set the height of .main-nav to match the tallest li
         function setMainNavHeight() {
             // Get all footer .main-nav > li elements
-            const navItems = document.querySelectorAll('footer .main-nav > li');
+            const navItems = document.querySelectorAll('footer .footer-nav > li');
             
             // Initialize variable to store the tallest height
             let tallestHeight = 0;
@@ -475,7 +475,7 @@
             });
         
             // Set the height of .main-nav to the tallest height
-            const mainNav = document.querySelector('footer .main-nav');
+            const mainNav = document.querySelector('footer .footer-nav');
             mainNav.style.height = tallestHeight + 'px';
         }
         

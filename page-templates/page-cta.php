@@ -31,30 +31,46 @@ $contact_background_image = $fields['contact_background_image'] ?? null;
 								<div class="cell small-12 tablet-10 xlarge-8">
 									<?php if( !empty($steps_accordion) ):
 										$accordions = $steps_accordion["steps_accordion"]['accordions'] ?? null;	
+										$disable_accordions = $steps_accordion["steps_accordion"]['disable_accordions'] ?? null;
 										if($accordions):
 									?>
-										<ul class="accordion steps-accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true" data-deep-link="true" data-update-history="true" data-deep-link-smudge="true" data-deep-link-smudge-delay="500" data-deep-link-smudge-offset="150">
+										<ul class="accordion steps-accordion"<?php if( $disable_accordions === true ):?>disabled<?php endif;?> data-accordion data-multi-expand="true" data-allow-all-closed="true" data-deep-link="true" data-update-history="true" data-deep-link-smudge="true" data-deep-link-smudge-delay="500" data-deep-link-smudge-offset="150">
 											<?php $i = 1; foreach($accordions as $accordion):
 												// Add leading zero if $i is a single digit
 												$formatted_i = sprintf("%02d", $i);
-												$title = $accordion['title'];
-												$slug = sanitize_title($title);
-												$text_content = $accordion['text_content'];
-												$button_link = $accordion['button_link'];
+												$icon = $accordion['icon'] ?? null;
+												$title = $accordion['title'] ?? null;
+												$slug = '';
+												if( !empty( $title ) ) {
+													$slug = sanitize_title($title);
+												}
+												$text_content = $accordion['text_content'] ?? null;;
+												$button_link = $accordion['button_link'] ?? null;;
 											?>
 							    				<li class="accordion-item<?php if( $i == 1 ){ echo ' is-active init';}?>" data-accordion-item>
-													<a href="#<?=esc_attr($slug);?>" class="accordion-title color-black grid-x align-middle">
+													<a href="#<?=esc_attr($slug);?>" class="accordion-title color-black grid-x align-middle<?php if( $disable_accordions === true ):?> no-hover<?php endif;?>">
 														<div class="grid-x grid-padding-x">
 															<div class="number color-gold font-header cell shrink medium-2 grid-x flex-dir-column align-middle text-center position-relative">
-																<b><?=esc_attr( $formatted_i );?></b>
-																<svg xmlns="http://www.w3.org/2000/svg" width="41.151" height="25.411" viewBox="0 0 41.151 25.411"><path id="ic_expand_more_24px" d="M42.316,8.59,26.576,24.3,10.835,8.59,6,13.425,26.576,34,47.151,13.425Z" transform="translate(-6 -8.59)" fill="#c5a75f"/></svg>
+																<?php if( !empty( $icon ) ):?>
+																<?php
+																	$size = 'full';
+																	if( $icon ) {
+																		echo wp_get_attachment_image( $icon['id'], $size );
+																	}
+																?>
+																<?php else:?>
+																	<b><?=esc_attr( $formatted_i );?></b>
+																<?php endif;?>
+																<?php if( $disable_accordions !== true ):?>
+																	<svg xmlns="http://www.w3.org/2000/svg" width="41.151" height="25.411" viewBox="0 0 41.151 25.411"><path id="ic_expand_more_24px" d="M42.316,8.59,26.576,24.3,10.835,8.59,6,13.425,26.576,34,47.151,13.425Z" transform="translate(-6 -8.59)" fill="#c5a75f"/></svg>
+																<?php endif;?>
 															</div>
 															<div class="cell auto medium-10  grid-x align-middle">
 																<h2><?=esc_html($title);?></h2>
 															</div>
 														</div>
 													</a>
-													<div class="accordion-content" data-tab-content>
+													<div class="accordion-content<?php if( $disable_accordions === true ):?> show<?php endif;?>"<?php if( $disable_accordions !== true ):?> data-tab-content<?php endif;?> data-tab-content id="<?= sanitize_title($title);?>">
 														<div class="grid-x grid-padding-x">
 															<div class="cell auto medium-10 medium-offset-2">
 																<div class="grid-x grid-padding-x">
